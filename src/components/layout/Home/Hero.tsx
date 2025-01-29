@@ -7,13 +7,15 @@ import { ShinyButton } from "../../ui/shiny-button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 export default function Hero() {
+  const { theme } = useTheme();
   const words = [
     "Software Engineer",
     "Musician",
     "Developer",
-    "Bansuri Player (Fautist)",
+    "Bansuri Player (Flautist)",
   ];
 
   return (
@@ -38,7 +40,10 @@ export default function Hero() {
                 <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                   Explore My Work
                 </span>
-                <ArrowRight size={20} className="inline-block ml-1" />
+                <ArrowRight
+                  size={20}
+                  className="inline-block ml-1 dark:text-white"
+                />
               </ShimmerButton>
             </AnimatedDiv>
             <AnimatedDiv _delay={3.4}>

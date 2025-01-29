@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar/Navbar";
+import ThemeProvider from "@/theme/ThemeProvider";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable}   antialiased`}>
-        <section className="mx-24">
-          <Navbar />
-          {children}
-        </section>
+        <ThemeProvider>
+          <div className="mx-24">
+            <Navbar />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -4,9 +4,8 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, AnimationProps } from "framer-motion";
 import { ChevronUp } from "lucide-react";
 import Image from "next/image";
-import { delay } from "motion";
 
-const SocialMediaLinks = () => {
+const  SocialMediaLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleVisibility = () => {
