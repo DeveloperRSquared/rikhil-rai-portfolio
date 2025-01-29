@@ -17,7 +17,7 @@ export default function Hero() {
   ];
 
   return (
-    <div className="relative h-[85vh]">
+    <div className="relative h-[85vh] ml-16">
       <section className="pt-32 flex">
         {/* Hero Description */}
         <section className="hero-description mx-24 flex-[0.8]">
