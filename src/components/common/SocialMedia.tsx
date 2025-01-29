@@ -4,9 +4,11 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, AnimationProps } from "framer-motion";
 import { ChevronUp } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
-const  SocialMediaLinks = () => {
+const SocialMediaLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const toggleVisibility = () => {
     setIsOpen(!isOpen);
@@ -32,7 +34,7 @@ const  SocialMediaLinks = () => {
   }, []);
 
   return (
-    <section className="absolute top-[22%]">
+    <section className="absolute top-[25%]">
       {/* NOTE: AnimatePresence makes sures that Framer Motion will animate when the <li> is removed from the DOM */}
       <ul className="h-[230px] space-y-7 mb-6">
         <AnimatePresence>
@@ -40,29 +42,50 @@ const  SocialMediaLinks = () => {
             <>
               <motion.li {...animateProps(0.5)} className="cursor-pointer">
                 <Image
-                  src="/icons/facebook.png"
+                  src={
+                    theme == "dark"
+                      ? "/icons/facebook_white.png"
+                      : "/icons/facebook.png"
+                  }
                   width={30}
                   height={30}
                   alt="fb"
                 />
               </motion.li>
               <motion.li {...animateProps(0.4)} className="cursor-pointer">
-                <Image src="/icons/insta.png" width={30} height={30} alt="fb" />
+                <Image
+                  src={
+                    theme == "dark"
+                      ? "/icons/insta_white.png"
+                      : "/icons/insta.png"
+                  }
+                  width={30}
+                  height={30}
+                  alt="insta"
+                />
               </motion.li>
               <motion.li {...animateProps(0.3)} className="cursor-pointer">
                 <Image
-                  src="/icons/linkedin.png"
+                  src={
+                    theme == "dark"
+                      ? "/icons/linkedin_white.png"
+                      : "/icons/linkedin.png"
+                  }
                   width={30}
                   height={30}
-                  alt="fb"
+                  alt="linked in"
                 />
               </motion.li>
               <motion.li {...animateProps(0.2)} className="cursor-pointer">
                 <Image
-                  src="/icons/twitter.png"
+                  src={
+                    theme == "dark"
+                      ? "/icons/twitter_white.png"
+                      : "/icons/twitter.png"
+                  }
                   width={30}
                   height={30}
-                  alt="fb"
+                  alt="twitter"
                 />
               </motion.li>
             </>

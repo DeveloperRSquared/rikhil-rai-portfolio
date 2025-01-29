@@ -8,14 +8,13 @@ import { useEffect } from "react";
 export default function Home() {
   const { theme, setTheme } = useTheme();
 
-  // For testing dark mode
-  useEffect(() => {
-    setTheme("dark");
-  }, []);
+  const switchTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <section>
-      {theme}
+      <div onClick={switchTheme}>Switch Theme</div>
       <Hero />
       <SocialMedia />
     </section>

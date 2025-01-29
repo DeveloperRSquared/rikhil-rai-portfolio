@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
 export default function Hero() {
-  const { theme } = useTheme();
   const words = [
     "Software Engineer",
     "Musician",
@@ -22,7 +21,7 @@ export default function Hero() {
     <div className="relative h-[85vh] ml-16">
       <section className="pt-32 flex">
         {/* Hero Description */}
-        <section className="hero-description mx-24 flex-[0.8]">
+        <section className="hero-description mx-24 flex-[.9]">
           <AnimatedDiv className="text-5xl font-semibold" _delay={2.2}>
             <span className="font-bold">H</span>i, I'm Rikhil Raithatha
           </AnimatedDiv>
