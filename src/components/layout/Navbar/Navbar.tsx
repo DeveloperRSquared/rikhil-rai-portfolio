@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import AnimatedDiv from "../AnimatedDiv";
+import AnimatedDiv from "../../ui/AnimatedDiv";
 import HamburgerMenu from "./HamburgerMenu";
 
 export default function Navbar() {

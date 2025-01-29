@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "../components/layout/Navbar/Navbar";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "600", "700"],
 });
 
 export const metadata: Metadata = {
