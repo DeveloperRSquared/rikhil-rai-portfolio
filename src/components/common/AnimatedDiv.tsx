@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer"; // to detect when eleme
 
 type AnimatedDivProps = {
   children: ReactNode;
+  initial?: Record<string, number>;
   _delay?: number;
   _style?: Record<string, string>;
   className?: string;
@@ -33,15 +34,16 @@ const AnimatedDiv = ({
   return (
     <motion.div
       ref={ref || undefined}
-      initial="hidden"
+      initial={{ opacity: 0, y: 10 }}
       animate={controls}
-      variants={{
-        visible: {
-          opacity: 1,
-          y: 0,
-        },
-        hidden: { opacity: 0, y: 10 },
-      }}
+      // variants={{
+      //   visible: {
+      //     opacity: 1,
+      //     y: 0,
+      //   },
+      //   hidden: { opacity: 0, y: 10 },
+      // }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{
         delay: _delay,
         type: "spring",

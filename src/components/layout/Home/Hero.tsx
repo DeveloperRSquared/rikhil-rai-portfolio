@@ -18,7 +18,7 @@ export default function Hero() {
   ];
 
   return (
-    <div className="relative h-[85vh] ml-16">
+    <div className="relative ml-16">
       <section className="pt-32 flex">
         {/* Hero Description */}
         <section className="hero-description mx-24 flex-[.9]">
@@ -61,7 +61,7 @@ export default function Hero() {
         </section>
         <motion.section
           initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 3.4, type: "spring", stiffness: 180 }}
         >
           <Image
@@ -86,7 +86,7 @@ export default function Hero() {
             transition={{
               repeat: Infinity,
               repeatType: "loop",
-              type: 'spring',
+              type: "spring",
               duration: 2,
               ease: "easeInOut",
               repeatDelay: 2,
