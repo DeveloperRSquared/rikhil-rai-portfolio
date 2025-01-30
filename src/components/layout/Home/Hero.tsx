@@ -74,10 +74,27 @@ export default function Hero() {
         </motion.section>
       </section>
       <section className="text-center mt-32">
-        <span className="cursor-pointer text-xl font-light">Scroll Down</span>
-        <div className="border flex justify-center items-center w-8 h-8 rounded-full border-zinc-950 cursor-pointer mx-auto mt-3">
-          <ArrowDown size={20} />
-        </div>
+        <AnimatedDiv className="cursor-pointer text-xl font-light" _delay={5}>
+          Scroll Down
+        </AnimatedDiv>
+        <AnimatedDiv
+          className="border flex justify-center items-center w-8 h-8 rounded-full border-zinc-950 cursor-pointer mx-auto mt-3"
+          _delay={5.2}
+        >
+          <motion.div
+            animate={{ y: [0, -5, 0, -5, 0] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "loop",
+              type: 'spring',
+              duration: 2,
+              ease: "easeInOut",
+              repeatDelay: 2,
+            }}
+          >
+            <ArrowDown size={20} />
+          </motion.div>
+        </AnimatedDiv>
       </section>
     </div>
   );

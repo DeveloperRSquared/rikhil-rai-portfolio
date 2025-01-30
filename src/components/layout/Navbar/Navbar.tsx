@@ -11,22 +11,22 @@ export default function Navbar() {
       {/* Links */}
       <section className="flex gap-x-5 nav-links">
         <AnimatedDiv _delay={1.5} className="cursor-pointer">
-          <a href="" className="dark:text-white before:bg-white">
+          <a href="" className="dark:text-white dark:before:bg-white">
             About Me
           </a>
         </AnimatedDiv>
         <AnimatedDiv _delay={1.6} className="cursor-pointer">
-          <a href="" className="dark:text-white before:bg-white">
+          <a href="" className="dark:text-white dark:before:bg-white">
             Projects
           </a>
         </AnimatedDiv>
         <AnimatedDiv _delay={1.7} className="cursor-pointer">
-          <a href="" className="dark:text-white before:bg-white">
+          <a href="" className="dark:text-white dark:before:bg-white">
             Music
           </a>
         </AnimatedDiv>
         <AnimatedDiv _delay={1.8} className="cursor-pointer">
-          <a href="" className="dark:text-white before:bg-white">
+          <a href="" className="dark:text-white dark:before:bg-white">
             Contact
           </a>
         </AnimatedDiv>
