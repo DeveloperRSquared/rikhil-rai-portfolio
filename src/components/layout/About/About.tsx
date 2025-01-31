@@ -3,6 +3,9 @@
 import AnimatedDiv from "@/components/common/AnimatedDiv";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import TechnicalSkills from "./TechnicalSkills";
+import CarouselSlider from "@/components/common/CarouselSlider";
+import MusicalSkills from "./MusicalSkills";
 
 export default function About() {
   return (
@@ -25,7 +28,7 @@ export default function About() {
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 2, type: "spring", stiffness: 180 }}
-          className="mt-24"
+          className="mt-24 min-w-[30%]"
         >
           <Image
             src="/images/bansi_pic_circle.png"
@@ -36,7 +39,7 @@ export default function About() {
         </motion.div>
 
         {/* About Description */}
-        <div className="about-description flex-1">
+        <div className="about-description min-w-[60%]">
           <AnimatedDiv className="mt-24" _delay={2.5}>
             <p className="text-lg font-light">
               With a love for both logic and melody, I thrive in crafting
@@ -46,12 +49,10 @@ export default function About() {
               inspired by the timeless melodies of the Bansuri.
             </p>
           </AnimatedDiv>
-          <AnimatedDiv className="text-2xl font-bold mt-8" _delay={3}>
-            Technical Skills
-          </AnimatedDiv>
-          <AnimatedDiv className="text-lg font-light mt-3" _delay={3.5}>
-            — Bringing Ideas to Life Through Code
-          </AnimatedDiv>
+
+          <CarouselSlider
+            contents={[<TechnicalSkills key={0} />, <MusicalSkills key={1} />]}
+          />
         </div>
       </section>
     </section>
