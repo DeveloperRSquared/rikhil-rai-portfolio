@@ -2,14 +2,18 @@ import { useState } from "react";
 
 type CarouselSliderProps = {
   contents: React.ReactNode[];
+  contentClassName?: string;
 };
 
-export default function CarouselSlider({ contents }: CarouselSliderProps) {
+export default function CarouselSlider({
+  contents,
+  contentClassName,
+}: CarouselSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
     <section className="carousel-slider">
-      {contents[currentSlide]}
+      <div className={contentClassName}>{contents[currentSlide]}</div>
 
       {/* Buttons to change slide */}
       <div className="slider-buttons flex space-x-3 justify-center mt-5">

@@ -51,6 +51,7 @@ export default function About() {
           </AnimatedDiv>
 
           <CarouselSlider
+            contentClassName="h-[230px]"
             contents={[<TechnicalSkills key={0} />, <MusicalSkills key={1} />]}
           />
         </div>
