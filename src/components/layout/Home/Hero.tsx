@@ -62,7 +62,7 @@ export default function Hero() {
         <motion.section
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 3.4, type: "spring", stiffness: 180 }}
+          transition={{ delay: 1, type: "spring", stiffness: 180 }}
         >
           <Image
             src={"/images/hero_photo_circle.png"}

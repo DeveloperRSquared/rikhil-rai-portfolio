@@ -18,7 +18,7 @@ const AnimatedDiv = ({
   className = "",
 }: AnimatedDivProps) => {
   const controls = useAnimation(); // control - can start, stop animation
-  const [ref, inView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
+  const [ref, inView] = useInView({ threshold: 0.1 }); // Adjust threshold as needed
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -36,14 +36,14 @@ const AnimatedDiv = ({
       ref={ref || undefined}
       initial={{ opacity: 0, y: 10 }}
       animate={controls}
-      // variants={{
-      //   visible: {
-      //     opacity: 1,
-      //     y: 0,
-      //   },
-      //   hidden: { opacity: 0, y: 10 },
-      // }}
-      whileInView={{ opacity: 1, y: 0 }}
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+        },
+        hidden: { opacity: 0, y: 10 },
+      }}
+      // whileInView={{ opacity: 1, y: 0 }}
       transition={{
         delay: _delay,
         type: "spring",

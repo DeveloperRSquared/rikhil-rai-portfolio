@@ -27,7 +27,7 @@ export default function About() {
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 2, type: "spring", stiffness: 180 }}
+          transition={{ delay: 1, type: "spring", stiffness: 180 }}
           className="mt-24 min-w-[30%]"
         >
           <Image
@@ -40,7 +40,7 @@ export default function About() {
 
         {/* About Description */}
         <div className="about-description min-w-[60%]">
-          <AnimatedDiv className="mt-24" _delay={2.5}>
+          <AnimatedDiv className="mt-24" _delay={1.8}>
             <p className="text-lg font-light">
               With a love for both logic and melody, I thrive in crafting
               elegant software solutions and enchanting musical performances. My
