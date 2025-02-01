@@ -7,7 +7,6 @@ import { ShinyButton } from "../../ui/shiny-button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 
 export default function Hero() {
   const words = [

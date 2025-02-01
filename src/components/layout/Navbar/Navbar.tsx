@@ -4,7 +4,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between py-8 sticky top-0">
+    <nav className="flex items-center justify-between py-8">
       <AnimatedDiv className="cursor-pointer font-semibold" _delay={1}>
         Rikhil R
       </AnimatedDiv>
