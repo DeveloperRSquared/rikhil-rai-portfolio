@@ -8,6 +8,146 @@ import { Project } from "../layout/MyProjects/MyProjects";
 import { ShimmerButton } from "./shimmer-button";
 import { ArrowRight } from "lucide-react";
 import AnimatedDiv from "../common/AnimatedDiv";
+import { Modal, ModalBody, ModalContent, ModalTrigger } from "./animated-modal";
+
+type MoreDetailsProps = {
+  title: string;
+  subtitle: string;
+  description: string;
+  images: string[];
+  iosLink: string;
+  androidLink: string;
+};
+
+const MoreDetails = ({
+  title,
+  subtitle,
+  description,
+  images,
+  iosLink,
+  androidLink,
+}: MoreDetailsProps) => {
+  return (
+    <Modal>
+      {/* See More Details Button with Modal */}
+      <ModalTrigger className="group/modal-btn">
+        <ShimmerButton className="mt-4">
+          <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+            See More Details
+          </span>
+          <ArrowRight size={20} className="inline-block ml-1 dark:text-white" />
+        </ShimmerButton>
+      </ModalTrigger>
+      <ModalBody>
+        <ModalContent>
+          {/* Title */}
+          <AnimatedDiv
+            className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-3"
+            _delay={0.5}
+          >
+            {title}
+          </AnimatedDiv>
+          {/* Subtitle */}
+          <AnimatedDiv
+            className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8"
+            _delay={0.8}
+          >
+            {subtitle}
+          </AnimatedDiv>
+          {/* Images */}
+          <div className="flex justify-center items-center">
+            {images.map((image, idx) => (
+              <motion.div
+                key={"images" + idx}
+                style={{
+                  rotate: Math.random() * 20 - 10,
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 0,
+                  zIndex: 100,
+                }}
+                whileTap={{
+                  scale: 2,
+                  rotate: 0,
+                  zIndex: 100,
+                }}
+                className="rounded-xl bg-white dark:bg-black border-4 border-white dark:border-black overflow-hidden"
+              >
+                <AnimatedDiv _delay={1 + 0.1 * idx}>
+                  <Image
+                    src={image}
+                    alt={title}
+                    width="600"
+                    height="600"
+                    className="rounded-xl h-50 w-50 md:h-60 md:w-60 object-contain"
+                  />
+                </AnimatedDiv>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Description */}
+          <AnimatedDiv
+            className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-8"
+            _delay={1.8}
+          >
+            {description}
+          </AnimatedDiv>
+
+          {/* Download Buttons */}
+          <div className="flex justify-center space-x-4 mt-8">
+            <AnimatedDiv _delay={2}>
+              <motion.a
+                href={iosLink}
+                target="_blank"
+                whileHover={{
+                  type: "spring",
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  type: "spring",
+                  scale: 0.9,
+                }}
+              >
+                <Image
+                  src="/images/projects/app-store.svg"
+                  alt="download"
+                  width={150}
+                  height={150}
+                  className="inline-block cursor-pointer"
+                />
+              </motion.a>
+            </AnimatedDiv>
+
+            <AnimatedDiv _delay={2.2}>
+              <motion.a
+                href={androidLink}
+                target="_blank"
+                whileHover={{
+                  type: "spring",
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  type: "spring",
+                  scale: 0.9,
+                }}
+              >
+                <Image
+                  src="/images/projects/google-store.svg"
+                  alt="download"
+                  width={165}
+                  height={165}
+                  className="inline-block cursor-pointer"
+                />
+              </motion.a>
+            </AnimatedDiv>
+          </div>
+        </ModalContent>
+      </ModalBody>
+    </Modal>
+  );
+};
 
 export const AnimatedProjects = ({
   projects,
@@ -30,10 +170,6 @@ export const AnimatedProjects = ({
     return index === active;
   };
 
-  const handleSeeMoreDetails = () => {
-    console.log("See More Details");
-  };
-
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
@@ -44,8 +180,9 @@ export const AnimatedProjects = ({
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
+
   return (
-    <div className="w-[90%] mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+    <div className="lg:w-[90%] md:w-[100%] mx-auto antialiased font-sans px-4 py-20">
       <div className="relative grid grid-cols-1 md:grid-cols-3  gap-60 ">
         {/* Project Image Card */}
         <div className="min-w-[300px]">
@@ -123,10 +260,10 @@ export const AnimatedProjects = ({
             <h3 className="text-2xl font-bold dark:text-white text-black">
               {projects[active].title}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-neutral-500">
-              {projects[active].shortDescription}
+            <p className="text-sm text-gray-500 dark:text-neutral-500 mt-2">
+              {projects[active].subtitle}
             </p>
-            <motion.p className="text-lg text-gray-500 mt-8 dark:text-neutral-300 h-[150px]">
+            <motion.p className="text-lg text-gray-500 mt-8 dark:text-neutral-300 min-h-[150px]">
               {projects[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -151,16 +288,15 @@ export const AnimatedProjects = ({
                 </motion.span>
               ))}
             </motion.p>
-            {/* See More Details */}
-            <ShimmerButton className="mt-4" onClick={handleSeeMoreDetails}>
-              <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                See More Details
-              </span>
-              <ArrowRight
-                size={20}
-                className="inline-block ml-1 dark:text-white"
-              />
-            </ShimmerButton>
+            {/*  More Details with Modal */}
+            <MoreDetails
+              title={projects[active].title}
+              subtitle={projects[active].subtitle}
+              description={projects[active].description}
+              images={projects[active].images}
+              iosLink={projects[active].iosLink}
+              androidLink={projects[active].androidLink}
+            />
           </motion.div>
 
           {/* Next or Previous Project Button */}
