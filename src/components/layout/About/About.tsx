@@ -7,7 +7,7 @@ import TechnicalSkills from "./TechnicalSkills";
 import CarouselSlider from "@/components/common/CarouselSlider";
 import MusicalSkills from "./MusicalSkills";
 
-export default function About() {
+const About = () => {
   return (
     <section className="about h-screen py-32">
       <header className="text-center">
@@ -58,4 +58,6 @@ export default function About() {
       </section>
     </section>
   );
-}
+};
+
+export default About;

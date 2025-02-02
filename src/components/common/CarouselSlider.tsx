@@ -5,10 +5,10 @@ type CarouselSliderProps = {
   contentClassName?: string;
 };
 
-export default function CarouselSlider({
+const CarouselSlider = ({
   contents,
   contentClassName,
-}: CarouselSliderProps) {
+}: CarouselSliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
@@ -30,4 +30,6 @@ export default function CarouselSlider({
       </div>
     </section>
   );
-}
+};
+
+export default CarouselSlider;

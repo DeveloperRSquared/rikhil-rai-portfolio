@@ -8,7 +8,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+const Hero = () => {
   const words = [
     "Software Engineer",
     "Musician",
@@ -97,4 +97,6 @@ export default function Hero() {
       </section>
     </div>
   );
-}
+};
+
+export default Hero;

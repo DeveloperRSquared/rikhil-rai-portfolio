@@ -1,5 +1,5 @@
 import AnimatedDiv from "@/components/common/AnimatedDiv";
-import { AnimatedProjects } from "@/components/ui/animated-testimonials";
+import { AnimatedProjects } from "@/components/ui/animated-projects";
 
 export type Project = {
   title: string;
@@ -9,7 +9,7 @@ export type Project = {
   titleCardClassName: string;
 };
 
-export default function MyProjects() {
+const MyProjects = () => {
   const projects: Project[] = [
     {
       title: "Bhajan Lyrics",
@@ -52,4 +52,6 @@ export default function MyProjects() {
       <AnimatedProjects projects={projects} />
     </section>
   );
-}
+};
+
+export default MyProjects;
