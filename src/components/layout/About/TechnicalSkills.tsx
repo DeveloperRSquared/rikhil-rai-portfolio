@@ -41,7 +41,7 @@ const skills: Skill[] = [
   },
 ];
 
-export default function TechnicalSkills() {
+const TechnicalSkills = () => {
   return (
     <div>
       <AnimatedDiv className="text-2xl font-bold mt-8" _delay={0.5}>
@@ -70,4 +70,6 @@ export default function TechnicalSkills() {
       </div>
     </div>
   );
-}
+};
+
+export default TechnicalSkills;

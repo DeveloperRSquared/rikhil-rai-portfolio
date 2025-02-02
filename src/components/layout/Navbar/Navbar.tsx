@@ -2,7 +2,7 @@ import "./Navbar.css";
 import AnimatedDiv from "../../common/AnimatedDiv";
 import HamburgerMenu from "./HamburgerMenu";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav className="flex items-center justify-between py-8">
       <AnimatedDiv className="cursor-pointer font-semibold" _delay={1}>
@@ -34,4 +34,6 @@ export default function Navbar() {
       <HamburgerMenu />
     </nav>
   );
-}
+};
+
+export default Navbar;

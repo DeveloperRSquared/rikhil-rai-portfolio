@@ -1,7 +1,5 @@
 import { AnimationProps } from "framer-motion";
 
-export const defaultTranslateY = "translate-y-[-4px]";
-
 export const animationProps = {
   initial: { "--x": "100%", scale: 0.8 },
   animate: { "--x": "-100%", scale: 1 },

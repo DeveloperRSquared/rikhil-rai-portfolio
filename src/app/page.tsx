@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import About from "@/components/layout/About/About";
 import MyProjects from "@/components/layout/MyProjects/MyProjects";
 
-export default function Home() {
+const Home = () => {
   const { theme, setTheme } = useTheme();
 
   const switchTheme = () => {
@@ -22,4 +22,6 @@ export default function Home() {
       <MyProjects />
     </section>
   );
-}
+};
+
+export default Home;

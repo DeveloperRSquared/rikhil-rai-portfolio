@@ -20,7 +20,7 @@ const skills: MusicalSkillsType[] = [
   },
 ];
 
-export default function MusicalSkills() {
+const MusicalSkills = () => {
   return (
     <div>
       <AnimatedDiv className="text-2xl font-bold mt-8" _delay={0.5}>
@@ -42,4 +42,6 @@ export default function MusicalSkills() {
       ))}
     </div>
   );
-}
+};
+
+export default MusicalSkills;
