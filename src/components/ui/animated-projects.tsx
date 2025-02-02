@@ -14,16 +14,19 @@ type MoreDetailsProps = {
   title: string;
   subtitle: string;
   description: string;
+  images: string[];
+  iosLink: string;
+  androidLink: string;
 };
 
-const MoreDetails = ({ title, subtitle, description }: MoreDetailsProps) => {
-  const images = [
-    "/images/projects/bhajanLyrics/1.jpg",
-    "/images/projects/bhajanLyrics/2.jpg",
-    "/images/projects/bhajanLyrics/3.jpg",
-    "/images/projects/bhajanLyrics/4.jpg",
-  ];
-
+const MoreDetails = ({
+  title,
+  subtitle,
+  description,
+  images,
+  iosLink,
+  androidLink,
+}: MoreDetailsProps) => {
   return (
     <Modal>
       {/* See More Details Button with Modal */}
@@ -80,6 +83,51 @@ const MoreDetails = ({ title, subtitle, description }: MoreDetailsProps) => {
           <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-8">
             {description}
           </p>
+
+          {/* Download Buttons */}
+          <div className="flex justify-center space-x-4 mt-8">
+            <motion.a
+              href={iosLink}
+              target="_blank"
+              whileHover={{
+                type: "spring",
+                scale: 1.1,
+              }}
+              whileTap={{
+                type: "spring",
+                scale: 0.9,
+              }}
+            >
+              <Image
+                src="/images/projects/app-store.svg"
+                alt="download"
+                width={150}
+                height={150}
+                className="inline-block cursor-pointer"
+              />
+            </motion.a>
+
+            <motion.a
+              href={androidLink}
+              target="_blank"
+              whileHover={{
+                type: "spring",
+                scale: 1.1,
+              }}
+              whileTap={{
+                type: "spring",
+                scale: 0.9,
+              }}
+            >
+              <Image
+                src="/images/projects/google-store.svg"
+                alt="download"
+                width={165}
+                height={165}
+                className="inline-block cursor-pointer"
+              />
+            </motion.a>
+          </div>
         </ModalContent>
       </ModalBody>
     </Modal>
@@ -119,9 +167,9 @@ export const AnimatedProjects = ({
   };
 
   return (
-    <div className="w-[90%] mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
+    <div className="lg:w-[90%] md:w-[100%] mx-auto antialiased font-sans px-4 py-20">
       <div className="relative grid grid-cols-1 md:grid-cols-3  gap-60 ">
-       {/* Project Image Card */}
+        {/* Project Image Card */}
         <div className="min-w-[300px]">
           <AnimatedDiv className="relative h-80 w-full" _delay={1}>
             <AnimatePresence>
@@ -200,7 +248,7 @@ export const AnimatedProjects = ({
             <p className="text-sm text-gray-500 dark:text-neutral-500 mt-2">
               {projects[active].subtitle}
             </p>
-            <motion.p className="text-lg text-gray-500 mt-8 dark:text-neutral-300 h-[150px]">
+            <motion.p className="text-lg text-gray-500 mt-8 dark:text-neutral-300 min-h-[150px]">
               {projects[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -230,6 +278,9 @@ export const AnimatedProjects = ({
               title={projects[active].title}
               subtitle={projects[active].subtitle}
               description={projects[active].description}
+              images={projects[active].images}
+              iosLink={projects[active].iosLink}
+              androidLink={projects[active].androidLink}
             />
           </motion.div>
 

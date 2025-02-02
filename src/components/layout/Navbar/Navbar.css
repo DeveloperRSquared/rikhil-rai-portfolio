@@ -4,7 +4,7 @@ a {
   text-decoration: none;
 }
 
-a::before {
+nav a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -18,7 +18,7 @@ a::before {
   transition: transform 0.3s ease-in-out;
 }
 
-a:hover::before {
+nav a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }
