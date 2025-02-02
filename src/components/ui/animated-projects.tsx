@@ -41,13 +41,19 @@ const MoreDetails = ({
       <ModalBody>
         <ModalContent>
           {/* Title */}
-          <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-3">
+          <AnimatedDiv
+            className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-3"
+            _delay={0.5}
+          >
             {title}
-          </h4>
+          </AnimatedDiv>
           {/* Subtitle */}
-          <h5 className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8">
+          <AnimatedDiv
+            className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8"
+            _delay={0.8}
+          >
             {subtitle}
-          </h5>
+          </AnimatedDiv>
           {/* Images */}
           <div className="flex justify-center items-center">
             {images.map((image, idx) => (
@@ -68,65 +74,74 @@ const MoreDetails = ({
                 }}
                 className="rounded-xl bg-white dark:bg-black border-4 border-white dark:border-black overflow-hidden"
               >
-                <Image
-                  src={image}
-                  alt={title}
-                  width="600"
-                  height="600"
-                  className="rounded-xl h-50 w-50 md:h-60 md:w-60 object-contain"
-                />
+                <AnimatedDiv _delay={1 + 0.1 * idx}>
+                  <Image
+                    src={image}
+                    alt={title}
+                    width="600"
+                    height="600"
+                    className="rounded-xl h-50 w-50 md:h-60 md:w-60 object-contain"
+                  />
+                </AnimatedDiv>
               </motion.div>
             ))}
           </div>
 
           {/* Description */}
-          <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-8">
+          <AnimatedDiv
+            className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-8"
+            _delay={1.8}
+          >
             {description}
-          </p>
+          </AnimatedDiv>
 
           {/* Download Buttons */}
           <div className="flex justify-center space-x-4 mt-8">
-            <motion.a
-              href={iosLink}
-              target="_blank"
-              whileHover={{
-                type: "spring",
-                scale: 1.1,
-              }}
-              whileTap={{
-                type: "spring",
-                scale: 0.9,
-              }}
-            >
-              <Image
-                src="/images/projects/app-store.svg"
-                alt="download"
-                width={150}
-                height={150}
-                className="inline-block cursor-pointer"
-              />
-            </motion.a>
+            <AnimatedDiv _delay={2}>
+              <motion.a
+                href={iosLink}
+                target="_blank"
+                whileHover={{
+                  type: "spring",
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  type: "spring",
+                  scale: 0.9,
+                }}
+              >
+                <Image
+                  src="/images/projects/app-store.svg"
+                  alt="download"
+                  width={150}
+                  height={150}
+                  className="inline-block cursor-pointer"
+                />
+              </motion.a>
+            </AnimatedDiv>
 
-            <motion.a
-              href={androidLink}
-              target="_blank"
-              whileHover={{
-                type: "spring",
-                scale: 1.1,
-              }}
-              whileTap={{
-                type: "spring",
-                scale: 0.9,
-              }}
-            >
-              <Image
-                src="/images/projects/google-store.svg"
-                alt="download"
-                width={165}
-                height={165}
-                className="inline-block cursor-pointer"
-              />
-            </motion.a>
+            <AnimatedDiv _delay={2.2}>
+              <motion.a
+                href={androidLink}
+                target="_blank"
+                whileHover={{
+                  type: "spring",
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  type: "spring",
+                  scale: 0.9,
+                }}
+              >
+                <Image
+                  src="/images/projects/google-store.svg"
+                  alt="download"
+                  width={165}
+                  height={165}
+                  className="inline-block cursor-pointer"
+                />
+              </motion.a>
+            </AnimatedDiv>
           </div>
         </ModalContent>
       </ModalBody>
