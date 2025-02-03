@@ -1,5 +1,5 @@
 import AnimatedDiv from "@/components/common/AnimatedDiv";
-import { AnimatedProjects } from "@/components/ui/animated-projects";
+import { AnimatedProjects } from "@/components/layout/MyProjects/AnimatedProjects";
 
 export type Project = {
   title: string;

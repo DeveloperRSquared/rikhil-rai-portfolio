@@ -4,11 +4,16 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Project } from "../layout/MyProjects/MyProjects";
-import { ShimmerButton } from "./shimmer-button";
+import { Project } from "./MyProjects";
+import { ShimmerButton } from "../../ui/shimmer-button";
 import { ArrowRight } from "lucide-react";
-import AnimatedDiv from "../common/AnimatedDiv";
-import { Modal, ModalBody, ModalContent, ModalTrigger } from "./animated-modal";
+import AnimatedDiv from "../../common/AnimatedDiv";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalTrigger,
+} from "../../ui/animated-modal";
 
 type MoreDetailsProps = {
   title: string;
