@@ -44,10 +44,12 @@ const MusicalPerformance = () => {
         ></AnimatedDiv>
       </header>
 
-      <CarouselSlider
-        contents={performanceYoutubeVideos}
-        contentClassName="mx-auto mt-16"
-      ></CarouselSlider>
+      <AnimatedDiv _delay={1.9}>
+        <CarouselSlider
+          contents={performanceYoutubeVideos}
+          contentClassName="mx-auto mt-16"
+        ></CarouselSlider>
+      </AnimatedDiv>
     </section>
   );
 };
