@@ -44,16 +44,16 @@ const skills: Skill[] = [
 const TechnicalSkills = () => {
   return (
     <div>
-      <AnimatedDiv className="text-2xl font-bold mt-8" _delay={0.5}>
+      <AnimatedDiv className="text-2xl font-bold mt-8" _delay={1.8}>
         Technical Skills
       </AnimatedDiv>
-      <AnimatedDiv className="text-lg font-light mt-3" _delay={0.8}>
+      <AnimatedDiv className="text-lg font-light mt-3" _delay={2}>
         — Bringing Ideas to Life Through Code
       </AnimatedDiv>
 
       <div className="flex space-x-8 py-6">
         {skills.map((skill, index) => (
-          <AnimatedDiv key={index} _delay={1 + index * 0.2}>
+          <AnimatedDiv key={index} _delay={2 + index * 0.2}>
             <motion.div
               className="text-center w-16 cursor-pointer"
               whileHover={{ scale: 1.2 }}

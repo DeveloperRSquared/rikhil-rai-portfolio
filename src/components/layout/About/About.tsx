@@ -11,13 +11,13 @@ const About = () => {
   return (
     <section className="about h-screen py-32">
       <header className="text-center">
-        <AnimatedDiv className="text-5xl font-semibold" _delay={1.5}>
+        <AnimatedDiv className="text-5xl font-semibold" _delay={0.5}>
           About Me
         </AnimatedDiv>
         <AnimatedDiv
           className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
           children={null}
-          _delay={1.8}
+          _delay={0.8}
         ></AnimatedDiv>
       </header>
 
@@ -40,7 +40,7 @@ const About = () => {
 
         {/* About Description */}
         <div className="about-description min-w-[60%]">
-          <AnimatedDiv className="mt-24" _delay={1.8}>
+          <AnimatedDiv className="mt-24" _delay={1.5}>
             <p className="text-lg font-light">
               With a love for both logic and melody, I thrive in crafting
               elegant software solutions and enchanting musical performances. My
