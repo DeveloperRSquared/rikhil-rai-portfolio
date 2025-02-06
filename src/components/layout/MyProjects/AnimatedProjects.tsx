@@ -36,12 +36,17 @@ const MoreDetails = ({
     <Modal>
       {/* See More Details Button with Modal */}
       <ModalTrigger className="group/modal-btn">
-        <ShimmerButton className="mt-4">
-          <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-            See More Details
-          </span>
-          <ArrowRight size={20} className="inline-block ml-1 dark:text-white" />
-        </ShimmerButton>
+        <AnimatedDiv _delay={1}>
+          <ShimmerButton className="mt-4">
+            <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              See More Details
+            </span>
+            <ArrowRight
+              size={20}
+              className="inline-block ml-1 dark:text-white"
+            />
+          </ShimmerButton>
+        </AnimatedDiv>
       </ModalTrigger>
       <ModalBody>
         <ModalContent>
@@ -103,47 +108,41 @@ const MoreDetails = ({
           {/* Download Buttons */}
           <div className="flex justify-center space-x-4 mt-8">
             <AnimatedDiv _delay={2}>
-              <motion.a
-                href={iosLink}
-                target="_blank"
-                whileHover={{
-                  type: "spring",
-                  scale: 1.1,
-                }}
-                whileTap={{
-                  type: "spring",
-                  scale: 0.9,
-                }}
-              >
-                <Image
+              <motion.a href={iosLink} target="_blank">
+                <motion.img
                   src="/images/projects/app-store.svg"
                   alt="download"
                   width={150}
                   height={150}
                   className="inline-block cursor-pointer"
+                  whileHover={{
+                    type: "spring",
+                    scale: 1.1,
+                  }}
+                  whileTap={{
+                    type: "spring",
+                    scale: 0.9,
+                  }}
                 />
               </motion.a>
             </AnimatedDiv>
 
             <AnimatedDiv _delay={2.2}>
-              <motion.a
-                href={androidLink}
-                target="_blank"
-                whileHover={{
-                  type: "spring",
-                  scale: 1.1,
-                }}
-                whileTap={{
-                  type: "spring",
-                  scale: 0.9,
-                }}
-              >
-                <Image
+              <motion.a href={androidLink} target="_blank">
+                <motion.img
                   src="/images/projects/google-store.svg"
                   alt="download"
                   width={165}
                   height={165}
                   className="inline-block cursor-pointer"
+                  whileHover={{
+                    type: "spring",
+                    scale: 1.1,
+                  }}
+                  whileTap={{
+                    type: "spring",
+                    scale: 0.9,
+                  }}
                 />
               </motion.a>
             </AnimatedDiv>

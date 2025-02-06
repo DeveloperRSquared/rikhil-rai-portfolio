@@ -16,7 +16,8 @@ const AnimatedDiv = ({
   _delay,
   _style,
   className = "",
-}: AnimatedDivProps) => {
+  ...restProps
+}: AnimatedDivProps & { [key: string]: any }) => {
   const controls = useAnimation(); // control - can start, stop animation
   const [ref, inView] = useInView({ threshold: 0.1 }); // Adjust threshold as needed
   const [isMounted, setIsMounted] = useState(false);
@@ -43,7 +44,6 @@ const AnimatedDiv = ({
         },
         hidden: { opacity: 0, y: 10 },
       }}
-      // whileInView={{ opacity: 1, y: 0 }}
       transition={{
         delay: _delay,
         type: "spring",
@@ -51,6 +51,7 @@ const AnimatedDiv = ({
       }}
       style={_style}
       className={className}
+      {...restProps}
     >
       {children}
     </motion.div>

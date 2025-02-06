@@ -1,10 +1,19 @@
+"use client";
+
 import "./Navbar.css";
 import AnimatedDiv from "../../common/AnimatedDiv";
-import HamburgerMenu from "./HamburgerMenu";
+import { SunMoon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+
+  const switchTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <nav className="flex items-center justify-between py-8">
+    <nav className="flex items-center justify-between py-8 sticky top-0 z-[9000] backdrop-blur-md  px-24">
       <AnimatedDiv className="cursor-pointer font-semibold" _delay={1}>
         Rikhil R
       </AnimatedDiv>
@@ -31,7 +40,10 @@ const Navbar = () => {
           </a>
         </AnimatedDiv>
       </section>
-      <HamburgerMenu />
+      <AnimatedDiv _delay={1.9} className="flex items-center">
+        <SunMoon size={25} onClick={switchTheme} className="cursor-pointer" />
+      </AnimatedDiv>
+      {/* <HamburgerMenu /> */}
     </nav>
   );
 };

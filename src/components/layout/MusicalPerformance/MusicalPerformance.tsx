@@ -34,17 +34,17 @@ const MusicalPerformance = () => {
   return (
     <section className="about h-screen py-32">
       <header className="text-center">
-        <AnimatedDiv className="text-5xl font-semibold" _delay={1.5}>
+        <AnimatedDiv className="text-5xl font-semibold" _delay={0.5}>
           Musical Performances
         </AnimatedDiv>
         <AnimatedDiv
           className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
           children={null}
-          _delay={1.8}
+          _delay={0.8}
         ></AnimatedDiv>
       </header>
 
-      <AnimatedDiv _delay={1.9}>
+      <AnimatedDiv _delay={1}>
         <CarouselSlider
           contents={performanceYoutubeVideos}
           contentClassName="mx-auto mt-16"

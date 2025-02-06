@@ -29,7 +29,7 @@ const projects: Project[] = [
     iosLink:
       "https://apps.apple.com/us/app/bhajan-lyrics/id1553323738?utm_source=rikhilrai",
     androidLink:
-      "ttps://play.google.com/store/apps/details?id=com.developerrsquared.bhajanlyrics&utm_source=rikhilrai&pli=1",
+      "https://play.google.com/store/apps/details?id=com.developerrsquared.bhajanlyrics&utm_source=rikhilrai&pli=1",
   },
   {
     title: "Ragas",
@@ -73,13 +73,13 @@ const MyProjects = () => {
   return (
     <section className="about h-screen py-32">
       <header className="text-center">
-        <AnimatedDiv className="text-5xl font-semibold" _delay={1.5}>
+        <AnimatedDiv className="text-5xl font-semibold" _delay={0.5}>
           My Projects
         </AnimatedDiv>
         <AnimatedDiv
           className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
           children={null}
-          _delay={1.8}
+          _delay={0.8}
         ></AnimatedDiv>
       </header>
       <AnimatedProjects projects={projects} />
