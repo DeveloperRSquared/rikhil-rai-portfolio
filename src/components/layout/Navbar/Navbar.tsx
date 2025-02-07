@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between py-8 sticky top-0 z-[9000] backdrop-blur-md  px-24">
+    <nav className="flex items-center justify-between py-8 sticky top-0 z-[9000] backdrop-blur-md px-24 md:px-20 sm:px-12 max-md:hidden">
       <AnimatedDiv className="cursor-pointer font-semibold" _delay={1}>
         Rikhil R
       </AnimatedDiv>

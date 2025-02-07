@@ -25,7 +25,9 @@ const RootLayout = ({
       <body className={`${openSans.variable}   antialiased`}>
         <ThemeProvider>
           <Navbar />
-          <div className="mx-24">{children}</div>
+          <div className="mx-24 max-lg:mx-20 max-md:mx-14  max-sm:mx-4 main-content">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
