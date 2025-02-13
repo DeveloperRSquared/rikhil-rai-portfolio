@@ -1,6 +1,6 @@
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { Mail, MapPin, SendHorizontal } from "lucide-react";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { Mail, MapPin, SendHorizontal } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -11,17 +11,13 @@ const Contact = () => {
         </AnimatedDiv>
         <AnimatedDiv
           className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
-          children={null}
           _delay={0.8}
         ></AnimatedDiv>
       </header>
 
       <section className="flex mt-24 gap-12 mx-24">
         <div className="flex-1">
-          <AnimatedDiv
-            className="text-5xl font-semibold leading-[1.2em]"
-            _delay={1}
-          >
+          <AnimatedDiv className="text-5xl font-semibold leading-[1.2em]" _delay={1}>
             Let’s talk <br />
             on something great <br />
             together
@@ -31,8 +27,7 @@ const Contact = () => {
               <Mail size={30} /> <span>rikhil.rai@gmail.com</span>
             </AnimatedDiv>
             <AnimatedDiv className="flex text-2xl gap-4" _delay={1.4}>
-              <MapPin /> <span>London, UK </span>{" "}
-              <span className="text-3xl">🇬🇧</span>
+              <MapPin /> <span>London, UK </span> <span className="text-3xl">🇬🇧</span>
             </AnimatedDiv>
           </div>
         </div>

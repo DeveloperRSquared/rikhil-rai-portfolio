@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence, AnimationProps } from "framer-motion";
-import { ChevronUp } from "lucide-react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
+import { AnimatePresence, AnimationProps, motion } from 'framer-motion';
+import { ChevronUp } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const SocialMediaLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const SocialMediaLinks = () => {
       animate: { y: 0, opacity: 1, transition: { delay: _delay } },
       transition: {
         stiffness: 180,
-        type: "spring",
+        type: 'spring',
         duration: 0.5,
       },
       exit: { y: 20, opacity: 0, transition: { delay: _delay } },
@@ -42,11 +42,7 @@ const SocialMediaLinks = () => {
             <>
               <motion.li {...animateProps(0.5)} className="cursor-pointer">
                 <Image
-                  src={
-                    theme == "dark"
-                      ? "/icons/facebook_white.png"
-                      : "/icons/facebook.png"
-                  }
+                  src={theme == 'dark' ? '/icons/facebook_white.png' : '/icons/facebook.png'}
                   width={30}
                   height={30}
                   alt="fb"
@@ -54,11 +50,7 @@ const SocialMediaLinks = () => {
               </motion.li>
               <motion.li {...animateProps(0.4)} className="cursor-pointer">
                 <Image
-                  src={
-                    theme == "dark"
-                      ? "/icons/insta_white.png"
-                      : "/icons/insta.png"
-                  }
+                  src={theme == 'dark' ? '/icons/insta_white.png' : '/icons/insta.png'}
                   width={30}
                   height={30}
                   alt="insta"
@@ -66,11 +58,7 @@ const SocialMediaLinks = () => {
               </motion.li>
               <motion.li {...animateProps(0.3)} className="cursor-pointer">
                 <Image
-                  src={
-                    theme == "dark"
-                      ? "/icons/linkedin_white.png"
-                      : "/icons/linkedin.png"
-                  }
+                  src={theme == 'dark' ? '/icons/linkedin_white.png' : '/icons/linkedin.png'}
                   width={30}
                   height={30}
                   alt="linked in"
@@ -78,11 +66,7 @@ const SocialMediaLinks = () => {
               </motion.li>
               <motion.li {...animateProps(0.2)} className="cursor-pointer">
                 <Image
-                  src={
-                    theme == "dark"
-                      ? "/icons/twitter_white.png"
-                      : "/icons/twitter.png"
-                  }
+                  src={theme == 'dark' ? '/icons/twitter_white.png' : '/icons/twitter.png'}
                   width={30}
                   height={30}
                   alt="twitter"
@@ -101,10 +85,7 @@ const SocialMediaLinks = () => {
         <ChevronUp
           size={20}
           color="white"
-          className={
-            `block mx-auto transform duration-200` +
-            (isOpen ? " rotate-180" : "")
-          }
+          className={`block mx-auto transform duration-200` + (isOpen ? ' rotate-180' : '')}
         />
       </motion.button>
     </section>
