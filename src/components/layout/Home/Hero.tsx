@@ -43,8 +43,8 @@ const Hero = () => {
           {/* Buttons */}
           <div className="hero-buttons my-12 flex gap-7 max-md:gap-3 max-sm:gap-1 max-sm:my-8">
             <AnimatedDiv _delay={3} className="max-sm:mx-auto">
-              <ShimmerButton className="md:min-w-[220px] max-sm:px-3">
-                <span className="whitespace-pre-wrap text-center font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg text-md">
+              <ShimmerButton className="md:min-w-[220px] max-sm:px-3 max-sm:min-w-0">
+                <span className="text-center font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg text-md max-sm:text-sm">
                   Explore My Work
                 </span>
                 <ArrowRight
@@ -54,20 +54,20 @@ const Hero = () => {
               </ShimmerButton>
             </AnimatedDiv>
             <AnimatedDiv _delay={3.4}>
-              <ShinyButton className="md:min-w-[220px] max-md:text-sm max-sm:p-3">
+              <ShinyButton className="md:min-w-[210px] max-md:text-sm max-sm:px-2 max-sm:min-w-[160px]">
                 <span>Listen to My Music</span>
                 <Image
                   src={"/gif/headphone.gif"}
                   alt="headphone"
                   width={20}
                   height={20}
-                  className="inline-block ml-1 mb-1"
+                  className="inline-block ml-1 mb-1 max-sm:hidden"
                 />
               </ShinyButton>
             </AnimatedDiv>
           </div>
         </section>
-        {/* Side Image */}
+        {/* Hero Image */}
         <motion.section
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -79,11 +79,12 @@ const Hero = () => {
             alt="hero"
             width={280}
             height={280}
-            className="rounded-full max-md:w-[230px]"
+            className="rounded-full max-md:w-[230px] max-sm:w-[11em]"
           />
         </motion.section>
       </section>
-      <section className="text-center mt-32 max-md:mt-24 max-sm:mt-4">
+      {/* Scroll down */}
+      <section className="text-center mt-32 max-md:mt-24 max-sm:mt-4 max-md:hidden">
         <AnimatedDiv className="cursor-pointer text-xl font-light" _delay={5}>
           Scroll Down
         </AnimatedDiv>
