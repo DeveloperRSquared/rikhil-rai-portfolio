@@ -17,7 +17,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative ml-24 max-md:ml-0" id="hero-wrapper">
+    <div className="relative ml-24 max-md:ml-0 h-screen" id="hero-wrapper">
       <section className="pt-32 flex hero-content max-lg:flex-col-reverse max-2xl:justify-evenly max-lg:pt-20 max-md:pt-16 max-lg:items-center">
         {/* Hero Description */}
         <section className="hero-description max-sm:text-center">
@@ -79,12 +79,12 @@ const Hero = () => {
             alt="hero"
             width={280}
             height={280}
-            className="rounded-full max-md:w-[230px] max-sm:w-[11em]"
+            className="rounded-full max-md:w-[230px] max-sm:w-[13em]"
           />
         </motion.section>
       </section>
       {/* Scroll down */}
-      <section className="text-center mt-32 max-md:mt-24 max-sm:mt-4 max-md:hidden">
+      <section className="text-center mt-32 max-md:mt-24 max-sm:mt-4">
         <AnimatedDiv className="cursor-pointer text-xl font-light" _delay={5}>
           Scroll Down
         </AnimatedDiv>
