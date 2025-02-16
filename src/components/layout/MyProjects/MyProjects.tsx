@@ -52,7 +52,7 @@ const projects: Project[] = [
   {
     title: "Alankaars",
     description:
-      "Alankaars is a mobile application that enables music learners to create and practice new musical patterns, known as alankars, in both Indian Classical and Western notation systems. Users can select a scale, define their vocal or instrument range, and build custom patterns to enhance their musical skills. The app also allows users to save and share their favorite alankars",
+      "Alankaars is a mobile app for music learners to create and practice alankars in Indian Classical and Western notation. Users can choose a scale, set their vocal/instrument range, and build custom patterns to improve their skills. The app also lets them save and share their favorite alankars.",
     subtitle: "An app for music learners and enthusiasts",
     src: "/images/projects/alankars.png",
     titleCardClassName: "bg-pink-600",
@@ -71,9 +71,12 @@ const projects: Project[] = [
 
 const MyProjects = () => {
   return (
-    <section className="about h-screen py-32">
+    <section className="h-screen">
       <header className="text-center">
-        <AnimatedDiv className="text-5xl font-semibold" _delay={0.5}>
+        <AnimatedDiv
+          className="text-5xl font-semibold max-md:text-4xl"
+          _delay={0.5}
+        >
           My Projects
         </AnimatedDiv>
         <AnimatedDiv

@@ -21,7 +21,7 @@ const MusicalPerformance = () => {
     (performance, index) => (
       <AnimatedDiv key={"pytv" + index}>
         <HeroVideoDialog
-          className="block w-[60%] mx-auto"
+          className="block w-[60%] mx-auto max-md:w-[90%]"
           animationStyle="from-center"
           videoSrc={performance.songUrl}
           thumbnailSrc={performance.thumbnailUrl}
@@ -32,9 +32,12 @@ const MusicalPerformance = () => {
   );
 
   return (
-    <section className="about h-screen py-32">
+    <section className="">
       <header className="text-center">
-        <AnimatedDiv className="text-5xl font-semibold" _delay={0.5}>
+        <AnimatedDiv
+          className="text-5xl font-semibold max-md:text-4xl"
+          _delay={0.5}
+        >
           Musical Performances
         </AnimatedDiv>
         <AnimatedDiv
