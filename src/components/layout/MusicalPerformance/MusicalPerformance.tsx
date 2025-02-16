@@ -1,6 +1,6 @@
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import HeroVideoDialog from "./HeroVideoDialog";
-import CarouselSlider from "@/components/common/CarouselSlider";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import CarouselSlider from '@/components/common/CarouselSlider';
+import HeroVideoDialog from '@/components/layout/MusicalPerformance/HeroVideoDialog';
 
 const MusicalPerformance = () => {
   const songPerformances: {
@@ -8,12 +8,12 @@ const MusicalPerformance = () => {
     songUrl: string;
   }[] = [
     {
-      thumbnailUrl: "/images/musicalPerformance/1.jpg",
-      songUrl: "https://www.youtube.com/embed/jkURtI3ohE8",
+      thumbnailUrl: '/images/musicalPerformance/1.jpg',
+      songUrl: 'https://www.youtube.com/embed/jkURtI3ohE8',
     },
     {
-      thumbnailUrl: "/images/musicalPerformance/2.jpg",
-      songUrl: "https://www.youtube.com/embed/Tbc2ACcxocg",
+      thumbnailUrl: '/images/musicalPerformance/2.jpg',
+      songUrl: 'https://www.youtube.com/embed/Tbc2ACcxocg',
     },
   ];
 
@@ -40,18 +40,11 @@ const MusicalPerformance = () => {
         >
           Musical Performances
         </AnimatedDiv>
-        <AnimatedDiv
-          className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
-          children={null}
-          _delay={0.8}
-        ></AnimatedDiv>
+        <AnimatedDiv className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto" _delay={0.8} />
       </header>
 
       <AnimatedDiv _delay={1}>
-        <CarouselSlider
-          contents={performanceYoutubeVideos}
-          contentClassName="mx-auto mt-16"
-        ></CarouselSlider>
+        <CarouselSlider contents={performanceYoutubeVideos} contentClassName="mx-auto mt-16"></CarouselSlider>
       </AnimatedDiv>
     </section>
   );

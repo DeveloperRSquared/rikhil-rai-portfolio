@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import "./Navbar.css";
-import AnimatedDiv from "../../common/AnimatedDiv";
-import { SunMoon } from "lucide-react";
-import { useTheme } from "next-themes";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { SunMoon } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import './Navbar.css';
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
 
   const switchTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (

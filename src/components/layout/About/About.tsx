@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import TechnicalSkills from "./TechnicalSkills";
-import CarouselSlider from "@/components/common/CarouselSlider";
-import MusicalSkills from "./MusicalSkills";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import CarouselSlider from '@/components/common/CarouselSlider';
+import TechnicalSkills from '@/components/layout/About//TechnicalSkills';
+import MusicalSkills from '@/components/layout/About/MusicalSkills';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -17,11 +17,7 @@ const About = () => {
         >
           About Me
         </AnimatedDiv>
-        <AnimatedDiv
-          className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
-          children={null}
-          _delay={0.8}
-        ></AnimatedDiv>
+        <AnimatedDiv className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto" _delay={0.8} />
       </header>
 
       {/* About Main Content */}
@@ -30,7 +26,7 @@ const About = () => {
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1, type: "spring", stiffness: 180 }}
+          transition={{ delay: 1, type: 'spring', stiffness: 180 }}
           className="mt-24 max-lg:mt-14 min-w-[30%]"
         >
           <Image

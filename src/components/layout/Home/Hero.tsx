@@ -1,20 +1,15 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import AnimatedDiv from "../../common/AnimatedDiv";
-import { ShimmerButton } from "../../ui/shimmer-button";
-import { ShinyButton } from "../../ui/shiny-button";
-import { ArrowRight, ArrowDown } from "lucide-react";
-import { FlipWords } from "@/components/ui/flip-words";
-import { motion } from "framer-motion";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { FlipWords } from '@/components/ui/flip-words';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { ShinyButton } from '@/components/ui/shiny-button';
+import { motion } from 'framer-motion';
+import { ArrowDown, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero = () => {
-  const words = [
-    "Software Engineer",
-    "Musician",
-    "Developer",
-    "Bansuri Player (Flautist)",
-  ];
+  const words = ['Software Engineer', 'Musician', 'Developer', 'Bansuri Player (Flautist)'];
 
   return (
     <div className="relative ml-24 max-md:ml-0 h-screen" id="hero-wrapper">
@@ -47,17 +42,14 @@ const Hero = () => {
                 <span className="text-center font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg text-md max-sm:text-sm">
                   Explore My Work
                 </span>
-                <ArrowRight
-                  size={20}
-                  className="inline-block ml-1 dark:text-white"
-                />
+                <ArrowRight size={20} className="inline-block ml-1 dark:text-white" />
               </ShimmerButton>
             </AnimatedDiv>
             <AnimatedDiv _delay={3.4}>
               <ShinyButton className="md:min-w-[210px] max-md:text-sm max-sm:px-2 max-sm:min-w-[160px]">
                 <span>Listen to My Music</span>
                 <Image
-                  src={"/gif/headphone.gif"}
+                  src={'/gif/headphone.gif'}
                   alt="headphone"
                   width={20}
                   height={20}
@@ -71,7 +63,7 @@ const Hero = () => {
         <motion.section
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1, type: "spring", stiffness: 180 }}
+          transition={{ delay: 1, type: 'spring', stiffness: 180 }}
           className="side-image max-lg:mb-12"
         >
           <Image
@@ -96,10 +88,10 @@ const Hero = () => {
             animate={{ y: [0, -5, 0, -5, 0] }}
             transition={{
               repeat: Infinity,
-              repeatType: "loop",
-              type: "spring",
+              repeatType: 'loop',
+              type: 'spring',
               duration: 2,
-              ease: "easeInOut",
+              ease: 'easeInOut',
               repeatDelay: 2,
             }}
           >
