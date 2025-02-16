@@ -13,7 +13,7 @@ const CarouselSlider = ({ contents, contentClassName }: CarouselSliderProps) => 
       <div className={contentClassName}>{contents[currentSlide]}</div>
 
       {/* Buttons to change slide */}
-      <div className="slider-buttons flex space-x-3 justify-center mt-5">
+      <div className="slider-buttons flex space-x-3 justify-center mt-4">
         {contents.map((_, index) => (
           <span
             key={index}

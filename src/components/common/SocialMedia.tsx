@@ -34,7 +34,7 @@ const SocialMediaLinks = () => {
   }, []);
 
   return (
-    <section className="absolute top-[25%]">
+    <section className="absolute top-[25%] z-50 p-3 max-md:hidden">
       {/* NOTE: AnimatePresence makes sures that Framer Motion will animate when the <li> is removed from the DOM */}
       <ul className="h-[230px] space-y-7 mb-6">
         <AnimatePresence>

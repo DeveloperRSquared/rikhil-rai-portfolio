@@ -52,12 +52,20 @@ const TechnicalSkills = () => {
         — Bringing Ideas to Life Through Code
       </AnimatedDiv>
 
-      <div className="flex space-x-8 py-6">
+      <div className="flex space-x-8 max-xl:space-x-4 max-lg:space-x-5 py-6 max-lg:justify-center max-md:space-x-1 max-sm:space-x-0 max-sm:overflow-scroll max-sm:justify-start">
         {skills.map((skill, index) => (
           <AnimatedDiv key={index} _delay={2 + index * 0.2}>
-            <motion.div className="text-center w-16 cursor-pointer" whileHover={{ scale: 1.2 }}>
-              <Image src={skill.imgSrc} alt={skill.name} height={32} width={32} className="mx-auto" />
-              <span className="mt-3 text-sm block">{skill.name}</span>
+            <motion.div
+              className="text-center w-16 cursor-pointer"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1.2 }}
+            >
+              <img
+                src={skill.imgSrc}
+                alt={skill.name}
+                className="h-12 max-lg:h-8 block mx-auto"
+              />
+              <span className="mt-3 max-md:text-xs block">{skill.name}</span>
             </motion.div>
           </AnimatedDiv>
         ))}

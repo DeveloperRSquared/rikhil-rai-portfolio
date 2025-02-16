@@ -19,13 +19,34 @@ type MoreDetailsProps = {
   androidLink: string;
 };
 
-const MoreDetails = ({ title, subtitle, description, images, iosLink, androidLink }: MoreDetailsProps) => {
+const MoreDetails = ({
+  title,
+  subtitle,
+  description,
+  images,
+  iosLink,
+  androidLink,
+}: MoreDetailsProps) => {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+
+  // Close when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest(".image-container")) {
+        setActiveIdx(null); // Reset on outside click
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
     <Modal>
       {/* See More Details Button with Modal */}
       <ModalTrigger className="group/modal-btn">
         <AnimatedDiv _delay={1}>
-          <ShimmerButton className="mt-4">
+          <ShimmerButton className="mt-4 max-sm:mx-auto max-sm:mt-2">
             <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               See More Details
             </span>
@@ -33,7 +54,7 @@ const MoreDetails = ({ title, subtitle, description, images, iosLink, androidLin
           </ShimmerButton>
         </AnimatedDiv>
       </ModalTrigger>
-      <ModalBody>
+      <ModalBody className="max-sm:mx-4 rounded-lg">
         <ModalContent>
           {/* Title */}
           <AnimatedDiv
@@ -52,19 +73,23 @@ const MoreDetails = ({ title, subtitle, description, images, iosLink, androidLin
               <motion.div
                 key={'images' + idx}
                 style={{
-                  rotate: Math.random() * 20 - 10,
+                  rotate: activeIdx == idx ? 0 : Math.random() * 20 - 10,
+                  scale: activeIdx == idx ? 2.4 : 1,
+                  zIndex: activeIdx == idx ? 100 : 1,
                 }}
                 whileHover={{
-                  scale: 1.1,
-                  rotate: 0,
+                  scale: 1.8,
                   zIndex: 100,
-                }}
-                whileTap={{
-                  scale: 2,
                   rotate: 0,
-                  zIndex: 100,
+                  type: "spring",
+                  transition: { duration: 0.05 },
                 }}
-                className="rounded-xl bg-white dark:bg-black border-4 border-white dark:border-black overflow-hidden"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent outside click from triggering immediately
+                  setActiveIdx(activeIdx === idx ? null : idx);
+                }}
+                className="rounded-xl bg-white dark:bg-black border-4 border-white dark:border-black overflow-hidden image-container duration-150"
+                onContextMenu={(e) => e.preventDefault()} // Prevents context menu
               >
                 <AnimatedDiv _delay={1 + 0.1 * idx}>
                   <Image
@@ -80,7 +105,10 @@ const MoreDetails = ({ title, subtitle, description, images, iosLink, androidLin
           </div>
 
           {/* Description */}
-          <AnimatedDiv className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-8" _delay={1.8}>
+          <AnimatedDiv
+            className="text-[1.1em] md:text-base text-neutral-500 dark:text-neutral-400 mt-8"
+            _delay={1.8}
+          >
             {description}
           </AnimatedDiv>
 
@@ -159,11 +187,14 @@ export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Pro
   };
 
   return (
-    <div className="lg:w-[90%] md:w-[100%] mx-auto antialiased font-sans px-4 py-20">
-      <div className="relative grid grid-cols-1 md:grid-cols-3  gap-60 ">
+    <div className="lg:w-[90%] md:w-[100%] mx-auto antialiased font-sans px-4 py-20 max-lg:pt-14">
+      <div className="relative md:grid grid-cols-1 md:grid-cols-3 gap-60">
         {/* Project Image Card */}
-        <div className="min-w-[300px]">
-          <AnimatedDiv className="relative h-80 w-full" _delay={1}>
+        <div className="mx-auto w-[300px] max-lg:w-[230px] max-md:w-[200px]">
+          <AnimatedDiv
+            className="relative h-40 w-full md:h-80 max-sm:h-32"
+            _delay={1}
+          >
             <AnimatePresence>
               {projects.map((project, index) => (
                 <motion.div
@@ -203,7 +234,7 @@ export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Pro
                     width={200}
                     height={200}
                     draggable={false}
-                    className="h-50 object-contain object-center"
+                    className="h-50 object-contain object-center max-lg:h-20"
                   />
                 </motion.div>
               ))}
@@ -211,7 +242,10 @@ export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Pro
           </AnimatedDiv>
         </div>
         {/* Project Title, Content */}
-        <AnimatedDiv className="flex justify-between flex-col py-4 col-span-2" _delay={1.2}>
+        <AnimatedDiv
+          className="flex justify-between flex-col py-4 col-span-2 max-lg:mt-4"
+          _delay={1.2}
+        >
           <motion.div
             key={active}
             initial={{
@@ -231,10 +265,14 @@ export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Pro
               ease: 'easeInOut',
             }}
           >
-            <h3 className="text-2xl font-bold dark:text-white text-black">{projects[active].title}</h3>
-            <p className="text-sm text-gray-500 dark:text-neutral-500 mt-2">{projects[active].subtitle}</p>
-            <motion.p className="text-lg text-gray-500 mt-8 dark:text-neutral-300 min-h-[150px]">
-              {projects[active].description.split(' ').map((word, index) => (
+            <h3 className="text-2xl font-bold dark:text-white text-black max-lg:-text-xl max-md:text-center">
+              {projects[active].title}
+            </h3>
+            <p className="text-sm text-gray-500 dark:text-neutral-500 mt-2 max-md:text-center">
+              {projects[active].subtitle}
+            </p>
+            <motion.p className="text-lg text-gray-500 mt-8 max-md:mt-4 dark:text-neutral-300 min-h-[150px] max-lg:text-[1.1em]">
+              {projects[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{
@@ -270,7 +308,7 @@ export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Pro
           </motion.div>
 
           {/* Next or Previous Project Button */}
-          <div className="flex gap-4 pt-12 md:pt-0 mt-12">
+          <div className="flex gap-4 pt-12 max-lg:pt-0 mt-12 max-sm:mt-2 max-md:mx-auto">
             <button
               onClick={handlePrev}
               type="button"

@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar/Navbar";
 import ThemeProvider from "@/theme/ThemeProvider";
+import NavigationDock from "@/components/layout/NavigationDock/NavigationDock";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -25,7 +26,10 @@ const RootLayout = ({
       <body className={`${openSans.variable}   antialiased`}>
         <ThemeProvider>
           <Navbar />
-          <div className="mx-24">{children}</div>
+          <NavigationDock />
+          <div className="mx-24 max-lg:mx-20 max-md:mx-14  max-sm:mx-4 main-content">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

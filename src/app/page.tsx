@@ -9,7 +9,7 @@ import Contact from "@/components/layout/Contact/Contact";
 
 const Home = () => {
   return (
-    <section>
+    <section className="overflow-hidden">
       <SocialMedia />
       <Hero />
       <About />
