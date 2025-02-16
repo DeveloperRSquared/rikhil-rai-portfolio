@@ -32,7 +32,7 @@ const MusicalPerformance = () => {
   );
 
   return (
-    <section className="h-screen">
+    <section className="">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -50,7 +50,7 @@ const MusicalPerformance = () => {
       <AnimatedDiv _delay={1}>
         <CarouselSlider
           contents={performanceYoutubeVideos}
-          contentClassName="mx-auto mt-16 border"
+          contentClassName="mx-auto mt-16"
         ></CarouselSlider>
       </AnimatedDiv>
     </section>
