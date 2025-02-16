@@ -23,10 +23,7 @@ const skills: MusicalSkillsType[] = [
 const MusicalSkills = () => {
   return (
     <div>
-      <AnimatedDiv
-        className="text-2xl font-bold mt-8 max-sm:text-xl max-sm:mt-3"
-        _delay={0.5}
-      >
+      <AnimatedDiv className="text-2xl font-bold mt-8" _delay={0.5}>
         Musical Skills
       </AnimatedDiv>
       <AnimatedDiv

@@ -9,7 +9,7 @@ import MusicalSkills from "./MusicalSkills";
 
 const About = () => {
   return (
-    <section className="about h-screen">
+    <section className="h-screen">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -54,7 +54,7 @@ const About = () => {
           </AnimatedDiv>
 
           <CarouselSlider
-            contentClassName="h-[230px]"
+            contentClassName="h-[200px]"
             contents={[<TechnicalSkills key={0} />, <MusicalSkills key={1} />]}
           />
         </div>

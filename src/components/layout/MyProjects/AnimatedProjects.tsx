@@ -117,7 +117,7 @@ const MoreDetails = ({
 
           {/* Description */}
           <AnimatedDiv
-            className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 mt-8"
+            className="text-[1.1em] md:text-base text-neutral-500 dark:text-neutral-400 mt-8"
             _delay={1.8}
           >
             {description}
