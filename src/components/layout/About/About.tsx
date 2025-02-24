@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import TechnicalSkills from "./TechnicalSkills";
-import CarouselSlider from "@/components/common/CarouselSlider";
-import MusicalSkills from "./MusicalSkills";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import TechnicalSkills from './TechnicalSkills';
+import CarouselSlider from '@/components/common/CarouselSlider';
+import MusicalSkills from './MusicalSkills';
 
 const About = () => {
   return (
-    <section className="h-screen">
+    <section className="h-screen" id="about-me">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -30,7 +30,7 @@ const About = () => {
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1, type: "spring", stiffness: 180 }}
+          transition={{ delay: 1, type: 'spring', stiffness: 180 }}
           className="mt-24 max-lg:mt-14 min-w-[30%]"
         >
           <Image

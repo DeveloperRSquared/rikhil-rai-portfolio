@@ -1,6 +1,6 @@
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import HeroVideoDialog from "./HeroVideoDialog";
-import CarouselSlider from "@/components/common/CarouselSlider";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import HeroVideoDialog from './HeroVideoDialog';
+import CarouselSlider from '@/components/common/CarouselSlider';
 
 const MusicalPerformance = () => {
   const songPerformances: {
@@ -8,18 +8,18 @@ const MusicalPerformance = () => {
     songUrl: string;
   }[] = [
     {
-      thumbnailUrl: "/images/musicalPerformance/1.jpg",
-      songUrl: "https://www.youtube.com/embed/jkURtI3ohE8",
+      thumbnailUrl: '/images/musicalPerformance/1.jpg',
+      songUrl: 'https://www.youtube.com/embed/jkURtI3ohE8',
     },
     {
-      thumbnailUrl: "/images/musicalPerformance/2.jpg",
-      songUrl: "https://www.youtube.com/embed/Tbc2ACcxocg",
+      thumbnailUrl: '/images/musicalPerformance/2.jpg',
+      songUrl: 'https://www.youtube.com/embed/Tbc2ACcxocg',
     },
   ];
 
   const performanceYoutubeVideos = songPerformances.map(
     (performance, index) => (
-      <AnimatedDiv key={"pytv" + index}>
+      <AnimatedDiv key={'pytv' + index}>
         <HeroVideoDialog
           className="block w-[60%] mx-auto max-md:w-[90%]"
           animationStyle="from-center"
@@ -32,7 +32,7 @@ const MusicalPerformance = () => {
   );
 
   return (
-    <section className="">
+    <section id="musical-performance">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"

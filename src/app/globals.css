@@ -75,3 +75,8 @@ body {
 *::-webkit-scrollbar {
   display: none;
 }
+
+html,
+body {
+  scroll-behavior: smooth;
+}

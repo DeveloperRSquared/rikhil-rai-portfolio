@@ -71,7 +71,7 @@ const projects: Project[] = [
 
 const MyProjects = () => {
   return (
-    <section className="h-screen">
+    <section className="h-screen" id="my-projects">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"

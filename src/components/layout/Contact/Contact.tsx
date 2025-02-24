@@ -1,10 +1,10 @@
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { Mail, MapPin, SendHorizontal } from "lucide-react";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
+import { Mail, MapPin, SendHorizontal } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className="h-screen mt-40">
+    <section className="h-screen mt-40" id="contact">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -41,7 +41,7 @@ const Contact = () => {
               className="flex text-2xl gap-4 max-lg:text-xl"
               _delay={1.4}
             >
-              <MapPin /> <span>London, UK </span>{" "}
+              <MapPin /> <span>London, UK </span>{' '}
               <span className="text-3xl">🇬🇧</span>
             </AnimatedDiv>
           </div>
