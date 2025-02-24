@@ -1,4 +1,4 @@
-import AnimatedDiv from "@/components/common/AnimatedDiv";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
 
 type MusicalSkillsType = {
   title: string;
@@ -7,16 +7,16 @@ type MusicalSkillsType = {
 
 const skills: MusicalSkillsType[] = [
   {
-    title: "Instrument Mastery - ",
-    description: "Bansuri (5+ years of experience)",
+    title: 'Instrument Mastery —',
+    description: 'Bansuri (5+ years of experience)',
   },
   {
-    title: "Genres - ",
-    description: "Indian classical (Ragas), devotional music",
+    title: 'Genres —',
+    description: 'Indian classical (Ragas), devotional music',
   },
   {
-    title: "Notable Performances - ",
-    description: "Performed at XYZ Music Festival in 2023",
+    title: 'Notable Performances —',
+    description: 'Performed at XYZ Music Festival in 2023',
   },
 ];
 

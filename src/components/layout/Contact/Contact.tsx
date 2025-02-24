@@ -14,7 +14,6 @@ const Contact = () => {
         </AnimatedDiv>
         <AnimatedDiv
           className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
-          children={null}
           _delay={0.8}
         ></AnimatedDiv>
       </header>

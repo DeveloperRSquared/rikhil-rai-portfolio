@@ -1,10 +1,10 @@
-"use client";
-import { useEffect, useState, ReactNode } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer"; // to detect when elements enter the viewport
+'use client';
+import { motion, useAnimation } from 'framer-motion';
+import { ReactNode, useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer'; // to detect when elements enter the viewport
 
 type AnimatedDivProps = {
-  children: ReactNode;
+  children?: ReactNode;
   initial?: Record<string, number>;
   _delay?: number;
   _style?: Record<string, string>;
@@ -15,16 +15,17 @@ const AnimatedDiv = ({
   children,
   _delay,
   _style,
-  className = "",
+  className = '',
   ...restProps
-}: AnimatedDivProps & { [key: string]: any }) => {
+}: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+AnimatedDivProps & { [key: string]: any }) => {
   const controls = useAnimation(); // control - can start, stop animation
   const [ref, inView] = useInView({ threshold: 0.1 }); // Adjust threshold as needed
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     if (isMounted && inView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [controls, inView, isMounted]);
 
@@ -46,7 +47,7 @@ const AnimatedDiv = ({
       }}
       transition={{
         delay: _delay,
-        type: "spring",
+        type: 'spring',
         stiffness: 180,
       }}
       style={_style}

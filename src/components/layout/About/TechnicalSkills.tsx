@@ -1,5 +1,6 @@
-import AnimatedDiv from "@/components/common/AnimatedDiv";
-import { motion } from "framer-motion";
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type Skill = {
   name: string;
@@ -8,36 +9,36 @@ type Skill = {
 
 const skills: Skill[] = [
   {
-    name: "JavaScript",
-    imgSrc: "/images/skills/javascript.png",
+    name: 'JavaScript',
+    imgSrc: '/images/skills/javascript.png',
   },
   {
-    name: "TypeScript",
-    imgSrc: "/images/skills/typescript.png",
+    name: 'TypeScript',
+    imgSrc: '/images/skills/typescript.png',
   },
   {
-    name: "AWS",
-    imgSrc: "/images/skills/aws.png",
+    name: 'AWS',
+    imgSrc: '/images/skills/aws.png',
   },
   {
-    name: "Python",
-    imgSrc: "/images/skills/python.png",
+    name: 'Python',
+    imgSrc: '/images/skills/python.png',
   },
   {
-    name: "SQL",
-    imgSrc: "/images/skills/sql.png",
+    name: 'SQL',
+    imgSrc: '/images/skills/sql.png',
   },
   {
-    name: "Docker",
-    imgSrc: "/images/skills/docker.png",
+    name: 'Docker',
+    imgSrc: '/images/skills/docker.png',
   },
   {
-    name: "React",
-    imgSrc: "/images/skills/react.png",
+    name: 'React',
+    imgSrc: '/images/skills/react.png',
   },
   {
-    name: "Git",
-    imgSrc: "/images/skills/git.png",
+    name: 'Git',
+    imgSrc: '/images/skills/git.png',
   },
 ];
 

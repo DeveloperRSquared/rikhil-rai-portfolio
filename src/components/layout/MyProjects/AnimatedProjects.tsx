@@ -1,19 +1,14 @@
-"use client";
+'use client';
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Project } from "./MyProjects";
-import { ShimmerButton } from "../../ui/shimmer-button";
-import { ArrowRight } from "lucide-react";
-import AnimatedDiv from "../../common/AnimatedDiv";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalTrigger,
-} from "../../ui/animated-modal";
+import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { useCallback, useEffect, useState } from 'react';
+import AnimatedDiv from '../../common/AnimatedDiv';
+import { Modal, ModalBody, ModalContent, ModalTrigger } from '../../ui/animated-modal';
+import { ShimmerButton } from '../../ui/shimmer-button';
+import { Project } from './MyProjects';
 
 type MoreDetailsProps = {
   title: string;
@@ -55,10 +50,7 @@ const MoreDetails = ({
             <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               See More Details
             </span>
-            <ArrowRight
-              size={20}
-              className="inline-block ml-1 dark:text-white"
-            />
+            <ArrowRight size={20} className="inline-block ml-1 dark:text-white" />
           </ShimmerButton>
         </AnimatedDiv>
       </ModalTrigger>
@@ -72,17 +64,14 @@ const MoreDetails = ({
             {title}
           </AnimatedDiv>
           {/* Subtitle */}
-          <AnimatedDiv
-            className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8"
-            _delay={0.8}
-          >
+          <AnimatedDiv className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8" _delay={0.8}>
             {subtitle}
           </AnimatedDiv>
           {/* Images */}
           <div className="flex justify-center items-center">
             {images.map((image, idx) => (
               <motion.div
-                key={"images" + idx}
+                key={'images' + idx}
                 style={{
                   rotate: activeIdx == idx ? 0 : Math.random() * 20 - 10,
                   scale: activeIdx == idx ? 2.4 : 1,
@@ -134,11 +123,11 @@ const MoreDetails = ({
                   height={150}
                   className="inline-block cursor-pointer"
                   whileHover={{
-                    type: "spring",
+                    type: 'spring',
                     scale: 1.1,
                   }}
                   whileTap={{
-                    type: "spring",
+                    type: 'spring',
                     scale: 0.9,
                   }}
                 />
@@ -154,11 +143,11 @@ const MoreDetails = ({
                   height={165}
                   className="inline-block cursor-pointer"
                   whileHover={{
-                    type: "spring",
+                    type: 'spring',
                     scale: 1.1,
                   }}
                   whileTap={{
-                    type: "spring",
+                    type: 'spring',
                     scale: 0.9,
                   }}
                 />
@@ -171,18 +160,12 @@ const MoreDetails = ({
   );
 };
 
-export const AnimatedProjects = ({
-  projects,
-  autoplay = false,
-}: {
-  projects: Project[];
-  autoplay?: boolean;
-}) => {
+export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Project[]; autoplay?: boolean }) => {
   const [active, setActive] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % projects.length);
-  };
+  }, [projects.length]);
 
   const handlePrev = () => {
     setActive((prev) => (prev - 1 + projects.length) % projects.length);
@@ -197,7 +180,7 @@ export const AnimatedProjects = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [handleNext, autoplay]);
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
@@ -238,7 +221,7 @@ export const AnimatedProjects = ({
                   }}
                   transition={{
                     duration: 0.4,
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                   }}
                   className={
                     `absolute inset-0 origin-bottom flex items-center justify-center rounded-lg ` +
@@ -279,7 +262,7 @@ export const AnimatedProjects = ({
             }}
             transition={{
               duration: 0.2,
-              ease: "easeInOut",
+              ease: 'easeInOut',
             }}
           >
             <h3 className="text-2xl font-bold dark:text-white text-black max-lg:-text-xl max-md:text-center">
@@ -293,18 +276,18 @@ export const AnimatedProjects = ({
                 <motion.span
                   key={index}
                   initial={{
-                    filter: "blur(10px)",
+                    filter: 'blur(10px)',
                     opacity: 0,
                     y: 5,
                   }}
                   animate={{
-                    filter: "blur(0px)",
+                    filter: 'blur(0px)',
                     opacity: 1,
                     y: 0,
                   }}
                   transition={{
                     duration: 0.2,
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                     delay: 0.02 * index,
                   }}
                   className="inline-block"
@@ -328,13 +311,17 @@ export const AnimatedProjects = ({
           <div className="flex gap-4 pt-12 max-lg:pt-0 mt-12 max-sm:mt-2 max-md:mx-auto">
             <button
               onClick={handlePrev}
+              type="button"
               className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+              aria-label="Previous"
             >
               <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
+              type="button"
               className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+              aria-label="Next"
             >
               <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
