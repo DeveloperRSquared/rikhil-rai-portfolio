@@ -26,7 +26,8 @@ const projects: Project[] = [
       '/images/projects/bhajanLyrics/3.jpg',
       '/images/projects/bhajanLyrics/4.jpg',
     ],
-    iosLink: 'https://apps.apple.com/us/app/bhajan-lyrics/id1553323738?utm_source=rikhilrai',
+    iosLink:
+      'https://apps.apple.com/us/app/bhajan-lyrics/id1553323738?utm_source=rikhilrai',
     androidLink:
       'https://play.google.com/store/apps/details?id=com.developerrsquared.bhajanlyrics&utm_source=rikhilrai&pli=1',
   },
@@ -43,14 +44,16 @@ const projects: Project[] = [
       '/images/projects/ragas/3.jpg',
       '/images/projects/ragas/4.jpg',
     ],
-    iosLink: 'https://apps.apple.com/us/app/ragas/id1602071930?utm_source=rikhilrai',
-    androidLink: 'https://play.google.com/store/apps/details?id=com.developerrsquared.ragas&utm_source=rikhilrai',
+    iosLink:
+      'https://apps.apple.com/us/app/ragas/id1602071930?utm_source=rikhilrai',
+    androidLink:
+      'https://play.google.com/store/apps/details?id=com.developerrsquared.ragas&utm_source=rikhilrai',
   },
   {
     title: 'Alankaras',
     description:
-      'Alankaars is a mobile app for music learners to create and practice alankars in Indian Classical and Western notation. Users can choose a scale, set their vocal/instrument range, and build custom patterns to improve their skills. The app also lets them save and share their favorite alankars.",
-    subtitle: "An app for music learners and enthusiasts',
+      'Alankaars is a mobile app for music learners to create and practice alankars in Indian Classical and Western notation. Users can choose a scale, set their vocal/instrument range, and build custom patterns to improve their skills. The app also lets them save and share their favorite alankars.',
+    subtitle: 'An app for music learners and enthusiasts',
     src: '/images/projects/alankars.png',
     titleCardClassName: 'bg-pink-600',
     images: [
@@ -59,8 +62,10 @@ const projects: Project[] = [
       '/images/projects/alankaras/3.jpg',
       '/images/projects/alankaras/4.jpg',
     ],
-    iosLink: 'https://apps.apple.com/us/app/alankaars/id1552787699?utm_source=rikhilrai',
-    androidLink: 'https://play.google.com/store/apps/details?id=com.alankaars&utm_source=rikhilrai',
+    iosLink:
+      'https://apps.apple.com/us/app/alankaars/id1552787699?utm_source=rikhilrai',
+    androidLink:
+      'https://play.google.com/store/apps/details?id=com.alankaars&utm_source=rikhilrai',
   },
 ];
 
@@ -74,7 +79,10 @@ const MyProjects = () => {
         >
           My Projects
         </AnimatedDiv>
-        <AnimatedDiv className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto" _delay={0.8} />
+        <AnimatedDiv
+          className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
+          _delay={0.8}
+        />
       </header>
       <AnimatedProjects projects={projects} />
     </section>
