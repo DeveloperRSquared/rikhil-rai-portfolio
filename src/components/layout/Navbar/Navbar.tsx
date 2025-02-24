@@ -1,9 +1,9 @@
 'use client';
 
-import AnimatedDiv from '@/components/common/AnimatedDiv';
+import './Navbar.css';
+import AnimatedDiv from '../../common/AnimatedDiv';
 import { SunMoon } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import './Navbar.css';
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -20,22 +20,28 @@ const Navbar = () => {
       {/* Links */}
       <section className="flex gap-x-5 nav-links">
         <AnimatedDiv _delay={1.5} className="cursor-pointer">
-          <a href="" className="dark:text-white dark:before:bg-white">
+          <a href="#about-me" className="dark:text-white dark:before:bg-white">
             About Me
           </a>
         </AnimatedDiv>
         <AnimatedDiv _delay={1.6} className="cursor-pointer">
-          <a href="" className="dark:text-white dark:before:bg-white">
+          <a
+            href="#my-projects"
+            className="dark:text-white dark:before:bg-white"
+          >
             Projects
           </a>
         </AnimatedDiv>
         <AnimatedDiv _delay={1.7} className="cursor-pointer">
-          <a href="" className="dark:text-white dark:before:bg-white">
+          <a
+            href="#musical-performance"
+            className="dark:text-white dark:before:bg-white"
+          >
             Music
           </a>
         </AnimatedDiv>
         <AnimatedDiv _delay={1.8} className="cursor-pointer">
-          <a href="" className="dark:text-white dark:before:bg-white">
+          <a href="#contact" className="dark:text-white dark:before:bg-white">
             Contact
           </a>
         </AnimatedDiv>

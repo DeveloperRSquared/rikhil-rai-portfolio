@@ -1,18 +1,23 @@
 'use client';
 
-import AnimatedDiv from '@/components/common/AnimatedDiv';
-import { FlipWords } from '@/components/ui/flip-words';
-import { ShimmerButton } from '@/components/ui/shimmer-button';
-import { ShinyButton } from '@/components/ui/shiny-button';
-import { motion } from 'framer-motion';
-import { ArrowDown, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import AnimatedDiv from '../../common/AnimatedDiv';
+import { ShimmerButton } from '../../ui/shimmer-button';
+import { ShinyButton } from '../../ui/shiny-button';
+import { ArrowRight, ArrowDown } from 'lucide-react';
+import { FlipWords } from '@/components/ui/flip-words';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const words = ['Software Engineer', 'Musician', 'Developer', 'Bansuri Player (Flautist)'];
+  const words = [
+    'Software Engineer',
+    'Musician',
+    'Developer',
+    'Bansuri Player (Flautist)',
+  ];
 
   return (
-    <div className="relative ml-24 max-md:ml-0 h-screen" id="hero-wrapper">
+    <div className="relative ml-24 max-md:ml-0 h-screen" id="hero">
       <section className="pt-32 flex hero-content max-lg:flex-col-reverse max-2xl:justify-evenly max-lg:pt-20 max-md:pt-16 max-lg:items-center">
         {/* Hero Description */}
         <section className="hero-description max-sm:text-center">
@@ -38,24 +43,31 @@ const Hero = () => {
           {/* Buttons */}
           <div className="hero-buttons my-12 flex gap-7 max-md:gap-3 max-sm:gap-1 max-sm:my-8">
             <AnimatedDiv _delay={3} className="max-sm:mx-auto">
-              <ShimmerButton className="md:min-w-[220px] max-sm:px-3 max-sm:min-w-0">
-                <span className="text-center font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg text-md max-sm:text-sm">
-                  Explore My Work
-                </span>
-                <ArrowRight size={20} className="inline-block ml-1 dark:text-white" />
-              </ShimmerButton>
+              <a href="#my-projects">
+                <ShimmerButton className="md:min-w-[220px] max-sm:px-3 max-sm:min-w-0">
+                  <span className="text-center font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg text-md max-sm:text-sm">
+                    Explore My Work
+                  </span>
+                  <ArrowRight
+                    size={20}
+                    className="inline-block ml-1 dark:text-white"
+                  />
+                </ShimmerButton>
+              </a>
             </AnimatedDiv>
             <AnimatedDiv _delay={3.4}>
-              <ShinyButton className="md:min-w-[210px] max-md:text-sm max-sm:px-2 max-sm:min-w-[160px]">
-                <span>Listen to My Music</span>
-                <Image
-                  src={'/gif/headphone.gif'}
-                  alt="headphone"
-                  width={20}
-                  height={20}
-                  className="inline-block ml-1 mb-1 max-sm:hidden"
-                />
-              </ShinyButton>
+              <a href="#musical-performance">
+                <ShinyButton className="md:min-w-[210px] max-md:text-sm max-sm:px-2 max-sm:min-w-[160px]">
+                  <span>Listen to My Music</span>
+                  <Image
+                    src={'/gif/headphone.gif'}
+                    alt="headphone"
+                    width={20}
+                    height={20}
+                    className="inline-block ml-1 mb-1 max-sm:hidden"
+                  />
+                </ShinyButton>
+              </a>
             </AnimatedDiv>
           </div>
         </section>
@@ -67,7 +79,7 @@ const Hero = () => {
           className="side-image max-lg:mb-12"
         >
           <Image
-            src={"/images/hero_photo_circle.png"}
+            src={'/images/hero_photo_circle.png'}
             alt="hero"
             width={280}
             height={280}

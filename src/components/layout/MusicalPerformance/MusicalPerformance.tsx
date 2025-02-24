@@ -1,6 +1,6 @@
 import AnimatedDiv from '@/components/common/AnimatedDiv';
+import HeroVideoDialog from './HeroVideoDialog';
 import CarouselSlider from '@/components/common/CarouselSlider';
-import HeroVideoDialog from '@/components/layout/MusicalPerformance/HeroVideoDialog';
 
 const MusicalPerformance = () => {
   const songPerformances: {
@@ -19,7 +19,7 @@ const MusicalPerformance = () => {
 
   const performanceYoutubeVideos = songPerformances.map(
     (performance, index) => (
-      <AnimatedDiv key={"pytv" + index}>
+      <AnimatedDiv key={'pytv' + index}>
         <HeroVideoDialog
           className="block w-[60%] mx-auto max-md:w-[90%]"
           animationStyle="from-center"
@@ -32,7 +32,7 @@ const MusicalPerformance = () => {
   );
 
   return (
-    <section className="">
+    <section id="musical-performance">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -40,11 +40,18 @@ const MusicalPerformance = () => {
         >
           Musical Performances
         </AnimatedDiv>
-        <AnimatedDiv className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto" _delay={0.8} />
+        <AnimatedDiv
+          className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
+          children={null}
+          _delay={0.8}
+        ></AnimatedDiv>
       </header>
 
       <AnimatedDiv _delay={1}>
-        <CarouselSlider contents={performanceYoutubeVideos} contentClassName="mx-auto mt-16"></CarouselSlider>
+        <CarouselSlider
+          contents={performanceYoutubeVideos}
+          contentClassName="mx-auto mt-16"
+        ></CarouselSlider>
       </AnimatedDiv>
     </section>
   );

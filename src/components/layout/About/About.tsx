@@ -1,15 +1,15 @@
 'use client';
 
 import AnimatedDiv from '@/components/common/AnimatedDiv';
-import CarouselSlider from '@/components/common/CarouselSlider';
-import TechnicalSkills from '@/components/layout/About//TechnicalSkills';
-import MusicalSkills from '@/components/layout/About/MusicalSkills';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import TechnicalSkills from './TechnicalSkills';
+import CarouselSlider from '@/components/common/CarouselSlider';
+import MusicalSkills from './MusicalSkills';
 
 const About = () => {
   return (
-    <section className="h-screen">
+    <section className="h-screen" id="about-me">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -17,7 +17,11 @@ const About = () => {
         >
           About Me
         </AnimatedDiv>
-        <AnimatedDiv className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto" _delay={0.8} />
+        <AnimatedDiv
+          className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
+          children={null}
+          _delay={0.8}
+        ></AnimatedDiv>
       </header>
 
       {/* About Main Content */}
