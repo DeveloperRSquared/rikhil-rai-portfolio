@@ -1,8 +1,36 @@
+'use client';
+
 import AnimatedDiv from '@/components/common/AnimatedDiv';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Mail, MapPin, SendHorizontal } from 'lucide-react';
 
 const Contact = () => {
+  const handleSendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevents default form submission
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      const email = formData.get('email') as string;
+      const name = formData.get('name') as string;
+      const message = formData.get('message') as string;
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim(),
+          name: name.trim(),
+          message: message.trim(),
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+    } catch (err) {
+      console.error('Error sending email:', err);
+    }
+  };
+
   return (
     <section className="h-screen mt-40" id="contact">
       <header className="text-center">
@@ -46,13 +74,17 @@ const Contact = () => {
           </div>
         </div>
         {/* Form */}
-        <form action="" className="flex-1 space-y-5 max-md:mt-4">
+        <form
+          onSubmit={handleSendEmail}
+          className="flex-1 space-y-5 max-md:mt-4"
+        >
           <AnimatedDiv _delay={1.6}>
             <input
               type="text"
               placeholder="Your name"
               name="name"
               className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500"
+              required
             />
           </AnimatedDiv>
           <AnimatedDiv _delay={1.8}>
@@ -61,6 +93,7 @@ const Contact = () => {
               placeholder="Your email"
               name="email"
               className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500"
+              required
             />
           </AnimatedDiv>
           <AnimatedDiv _delay={2}>
@@ -70,6 +103,7 @@ const Contact = () => {
               placeholder="Type your message here"
               rows={5}
               className="block bg-[#f7f7f7] py-3 px-5 rounded-3xl w-[100%] placeholder:text-zinc-500"
+              required
             ></textarea>
           </AnimatedDiv>
           <AnimatedDiv _delay={2.2}>
