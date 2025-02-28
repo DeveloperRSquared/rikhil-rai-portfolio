@@ -3,8 +3,14 @@
 import AnimatedDiv from '@/components/common/AnimatedDiv';
 import { ShimmerButton } from '@/components/ui/shimmer-button';
 import { Mail, MapPin, SendHorizontal } from 'lucide-react';
+import { Spinner } from '@heroui/react';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [isEmailSending, setIsEmailSending] = useState<boolean>(false);
+  const [hasEmailSent, setHasEmailSent] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
+
   const handleSendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevents default form submission
 
@@ -13,6 +19,8 @@ const Contact = () => {
       const email = formData.get('email') as string;
       const name = formData.get('name') as string;
       const message = formData.get('message') as string;
+
+      setIsEmailSending(true);
 
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -24,10 +32,25 @@ const Contact = () => {
         }),
       });
 
-      const data = await response.json();
-      console.log(data);
+      if (response.ok) {
+        setIsEmailSending(false);
+        setHasEmailSent(true);
+
+        setTimeout(() => {
+          setHasEmailSent(false);
+        }, 3000);
+      } else {
+        setError(response.statusText);
+        setTimeout(() => {
+          setError('');
+        }, 3000);
+      }
     } catch (err) {
       console.error('Error sending email:', err);
+      setError((err as Error).message);
+      setTimeout(() => {
+        setError('');
+      }, 3000);
     }
   };
 
@@ -89,7 +112,7 @@ const Contact = () => {
           </AnimatedDiv>
           <AnimatedDiv _delay={1.8}>
             <input
-              type="text"
+              type="email"
               placeholder="Your email"
               name="email"
               className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500"
@@ -106,10 +129,36 @@ const Contact = () => {
               required
             ></textarea>
           </AnimatedDiv>
+          {/* Error in sending email */}
+          {error && <span className="text-red-500">{error}</span>}
+
           <AnimatedDiv _delay={2.2}>
-            <ShimmerButton className="flex dark:text-white max-sm:text-sm">
-              Send Message
-              <SendHorizontal size={18} className="ml-2" />
+            <ShimmerButton className="dark:text-white max-sm:text-sm w-[180px] h-12">
+              {/* When email is neither sent nor being sent */}
+              {!isEmailSending && !hasEmailSent ? (
+                <>
+                  Send Message <SendHorizontal size={18} className="ml-2" />{' '}
+                </>
+              ) : (
+                ''
+              )}
+              {/* While email is being sent */}
+              {isEmailSending ? (
+                <Spinner
+                  variant="wave"
+                  color="white"
+                  className={'mb-4 text-sm'}
+                  size="md"
+                />
+              ) : (
+                ''
+              )}
+              {/* When email is sent */}
+              {hasEmailSent ? (
+                <span className="text-white">Message sent!</span>
+              ) : (
+                ''
+              )}
             </ShimmerButton>
           </AnimatedDiv>
         </form>
