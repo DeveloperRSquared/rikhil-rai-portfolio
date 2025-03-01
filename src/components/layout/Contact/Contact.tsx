@@ -55,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="h-screen mt-40 mb-24" id="contact">
+    <section className="h-screen mt-40 max-md:mb-24" id="contact">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -106,7 +106,7 @@ const Contact = () => {
               type="text"
               placeholder="Your name"
               name="name"
-              className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500"
+              className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500 dark:bg-zinc-800 dark:placeholder:text-neutral-100"
               required
             />
           </AnimatedDiv>
@@ -115,7 +115,7 @@ const Contact = () => {
               type="email"
               placeholder="Your email"
               name="email"
-              className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500"
+              className="block bg-[#f7f7f7] py-3 px-5 rounded-full w-[100%] placeholder:text-zinc-500 dark:bg-zinc-800 dark:placeholder:text-neutral-100"
               required
             />
           </AnimatedDiv>
@@ -125,7 +125,7 @@ const Contact = () => {
               id="message"
               placeholder="Type your message here"
               rows={5}
-              className="block bg-[#f7f7f7] py-3 px-5 rounded-3xl w-[100%] placeholder:text-zinc-500"
+              className="block bg-[#f7f7f7] py-3 px-5 rounded-3xl w-[100%] placeholder:text-zinc-500 dark:bg-zinc-800 dark:placeholder:text-neutral-100"
               required
             ></textarea>
           </AnimatedDiv>
