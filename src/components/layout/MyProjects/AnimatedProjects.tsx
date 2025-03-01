@@ -6,7 +6,12 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 import AnimatedDiv from '../../common/AnimatedDiv';
-import { Modal, ModalBody, ModalContent, ModalTrigger } from '../../ui/animated-modal';
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalTrigger,
+} from '../../ui/animated-modal';
 import { ShimmerButton } from '../../ui/shimmer-button';
 import { Project } from './MyProjects';
 
@@ -32,13 +37,13 @@ const MoreDetails = ({
   // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (!(e.target as HTMLElement).closest(".image-container")) {
+      if (!(e.target as HTMLElement).closest('.image-container')) {
         setActiveIdx(null); // Reset on outside click
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
   return (
@@ -50,7 +55,10 @@ const MoreDetails = ({
             <span className="whitespace-pre-wrap text-center text-sm font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               See More Details
             </span>
-            <ArrowRight size={20} className="inline-block ml-1 dark:text-white" />
+            <ArrowRight
+              size={20}
+              className="inline-block ml-1 dark:text-white"
+            />
           </ShimmerButton>
         </AnimatedDiv>
       </ModalTrigger>
@@ -64,7 +72,10 @@ const MoreDetails = ({
             {title}
           </AnimatedDiv>
           {/* Subtitle */}
-          <AnimatedDiv className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8" _delay={0.8}>
+          <AnimatedDiv
+            className="text-sm zinc-900 dark:text-neutral-400 font-light text-center mb-8"
+            _delay={0.8}
+          >
             {subtitle}
           </AnimatedDiv>
           {/* Images */}
@@ -81,7 +92,7 @@ const MoreDetails = ({
                   scale: 1.8,
                   zIndex: 100,
                   rotate: 0,
-                  type: "spring",
+                  type: 'spring',
                   transition: { duration: 0.05 },
                 }}
                 onClick={(e) => {
@@ -106,7 +117,7 @@ const MoreDetails = ({
 
           {/* Description */}
           <AnimatedDiv
-            className="text-[1.1em] md:text-base text-neutral-500 dark:text-neutral-400 mt-8"
+            className="text-[1.1em] md:text-base text-neutral-500 dark:text-neutral-400 mt-8 max-sm:text-sm"
             _delay={1.8}
           >
             {description}
@@ -160,7 +171,13 @@ const MoreDetails = ({
   );
 };
 
-export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Project[]; autoplay?: boolean }) => {
+export const AnimatedProjects = ({
+  projects,
+  autoplay = false,
+}: {
+  projects: Project[];
+  autoplay?: boolean;
+}) => {
   const [active, setActive] = useState(0);
 
   const handleNext = useCallback(() => {
@@ -272,7 +289,7 @@ export const AnimatedProjects = ({ projects, autoplay = false }: { projects: Pro
               {projects[active].subtitle}
             </p>
             <motion.p className="text-lg text-gray-500 mt-8 max-md:mt-4 dark:text-neutral-300 min-h-[150px] max-lg:text-[1.1em]">
-              {projects[active].description.split(" ").map((word, index) => (
+              {projects[active].description.split(' ').map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{

@@ -32,7 +32,7 @@ const MusicalPerformance = () => {
   );
 
   return (
-    <section id="musical-performance">
+    <section id="musical-performance" className="max-md:mt-12">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
@@ -42,9 +42,8 @@ const MusicalPerformance = () => {
         </AnimatedDiv>
         <AnimatedDiv
           className="border-none w-[80px] h-[1px] bg-black dark:bg-white mt-5 mx-auto"
-          children={null}
           _delay={0.8}
-        ></AnimatedDiv>
+        />
       </header>
 
       <AnimatedDiv _delay={1}>

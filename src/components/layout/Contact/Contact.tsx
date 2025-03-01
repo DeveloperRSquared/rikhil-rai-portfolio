@@ -55,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="h-screen mt-40" id="contact">
+    <section className="h-screen mt-40 mb-24" id="contact">
       <header className="text-center">
         <AnimatedDiv
           className="text-5xl font-semibold max-md:text-4xl"
