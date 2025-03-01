@@ -44,7 +44,7 @@ const Hero = () => {
           <div className="hero-buttons my-12 flex gap-7 max-md:gap-3 max-sm:gap-1 max-sm:my-8">
             <AnimatedDiv _delay={3} className="max-sm:mx-auto">
               <a href="#my-projects">
-                <ShimmerButton className="md:min-w-[220px] max-sm:px-3 max-sm:min-w-0">
+                <ShimmerButton className="md:min-w-[220px] max-sm:px-3 max-sm:min-w-0 max-sm:h-12">
                   <span className="text-center font-light leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg text-md max-sm:text-sm">
                     Explore My Work
                   </span>
@@ -57,7 +57,7 @@ const Hero = () => {
             </AnimatedDiv>
             <AnimatedDiv _delay={3.4}>
               <a href="#musical-performance">
-                <ShinyButton className="md:min-w-[210px] max-md:text-sm max-sm:px-2 max-sm:min-w-[160px]">
+                <ShinyButton className="md:min-w-[210px] max-md:text-sm max-sm:px-2 max-sm:min-w-[160px] max-sm:h-12">
                   <span>Listen to My Music</span>
                   <Image
                     src={'/gif/headphone.gif'}

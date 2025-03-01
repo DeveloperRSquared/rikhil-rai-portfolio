@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '../components/layout/Navbar/Navbar';
 import ThemeProvider from '@/theme/ThemeProvider';
 import NavigationDock from '@/components/layout/NavigationDock/NavigationDock';
+import HtmlHeadThemeUpdater from '@/components/common/HtmlHeadThemeUpdater';
 
 const openSans = Open_Sans({
   variable: '--font-open-sans',
@@ -23,8 +24,13 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
+      <head>
+        {/* Ensure the meta tag is present */}
+        <meta name="theme-color" content="black" />
+      </head>
       <body className={`${openSans.variable}   antialiased`}>
         <ThemeProvider>
+          <HtmlHeadThemeUpdater />
           <Navbar />
           <NavigationDock />
           <div className="mx-24 max-lg:mx-20 max-md:mx-14  max-sm:mx-4 main-content">

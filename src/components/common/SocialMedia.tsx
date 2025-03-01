@@ -25,7 +25,7 @@ const SocialMediaLinks = () => {
       },
       exit: { y: 20, opacity: 0, transition: { delay: _delay } },
       whileHover: { scale: 1.5, transition: { delay: 0 } },
-    } as AnimationProps);
+    }) as AnimationProps;
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,7 +41,7 @@ const SocialMediaLinks = () => {
           {isOpen && (
             <>
               <motion.li {...animateProps(0.5)} className="cursor-pointer">
-                <a href="#about-me">
+                <a href="https://github.com/rikhilrai" target="_blank">
                   {' '}
                   <Image
                     src={
@@ -56,7 +56,7 @@ const SocialMediaLinks = () => {
                 </a>
               </motion.li>
               <motion.li {...animateProps(0.4)} className="cursor-pointer">
-                <a href="#my-projects">
+                <a href="https://www.instagram.com/bansuriboy/" target="_blank">
                   <Image
                     src={
                       theme == 'dark'
@@ -70,7 +70,10 @@ const SocialMediaLinks = () => {
                 </a>
               </motion.li>
               <motion.li {...animateProps(0.3)} className="cursor-pointer">
-                <a href="#musical-performance">
+                <a
+                  href="https://www.linkedin.com/in/rikhilrai/"
+                  target="_blank"
+                >
                   <Image
                     src={
                       theme == 'dark'
@@ -84,7 +87,10 @@ const SocialMediaLinks = () => {
                 </a>
               </motion.li>
               <motion.li {...animateProps(0.2)} className="cursor-pointer">
-                <a href="#contact">
+                <a
+                  href="https://www.linkedin.com/in/rikhilrai/"
+                  target="_blank"
+                >
                   <Image
                     src={
                       theme == 'dark'
